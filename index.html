@@ -314,11 +314,39 @@
 
     .packages-section .section-inner { position: relative; z-index: 2; }
     
+    /* Pricing Intro Text */
+    .pricing-intro {
+      text-align: center;
+      margin-bottom: 50px;
+      color: #bfdbfe;
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    .pricing-intro p {
+      margin: 0 0 12px 0;
+    }
+
+    .pricing-factors {
+      display: inline-block;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(34, 211, 238, 0.3);
+      border-radius: 10px;
+      padding: 12px 20px;
+      font-size: 14px;
+      color: #e2e8f0;
+    }
+
+    .pricing-factors strong {
+      color: #22d3ee;
+    }
+
     /* Grid Configuration for 3 Items */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 26px;
+      margin-bottom: 40px;
     }
 
     /* Card Setup with Hidden Details Layer */
@@ -354,11 +382,20 @@
     }
 
     .card h3 {
-      margin: 0 0 12px 0;
+      margin: 0 0 6px 0;
       color: #ffffff;
       font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
+    }
+
+    .card-tier {
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+      font-weight: 600;
     }
 
     .card p {
@@ -372,8 +409,15 @@
       color: #67e8f9;
       font-size: 18px;
       font-weight: 800;
-      margin: 12px 0 16px 0 !important;
+      margin: 12px 0 6px 0 !important;
       text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
+    }
+
+    .price-note {
+      font-size: 12px;
+      color: #94a3b8;
+      margin-bottom: 16px;
+      font-style: italic;
     }
 
     .description-text {
@@ -464,13 +508,16 @@
 
     /* Upgraded High-Visibility Pricing Clarification Note */
     .small-note {
-      margin-top: 36px;
       text-align: center;
       color: #e2e8f0;
       font-size: 16px;
       font-weight: 500;
       letter-spacing: 0.2px;
       text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(34, 211, 238, 0.25);
+      border-radius: 12px;
+      padding: 20px;
     }
 
     .about {
@@ -583,6 +630,13 @@
       .card { min-height: auto; padding: 30px 22px; }
       form { padding: 28px 20px; }
       .about { padding: 30px 22px; }
+      .pricing-intro {
+        font-size: 14px;
+      }
+      .pricing-factors {
+        display: block;
+        margin-top: 12px;
+      }
     }
   </style>
 </head>
@@ -677,12 +731,22 @@
   <section class="packages-section">
     <div class="section-inner">
       <h2>Starter Packages</h2>
+      
+      <div class="pricing-intro">
+        <p>Every project is unique. Our pricing reflects the complexity, features, and timeline of your needs.</p>
+        <div class="pricing-factors">
+          <strong>Pricing depends on:</strong> design complexity, features, integrations, and revisions
+        </div>
+      </div>
+
       <div class="grid">
         
         <div class="card">
           <div class="card-main-content">
-            <h3>Starter Website</h3>
-            <p class="price-badge">Starting at $199</p>
+            <h3>Essential Website</h3>
+            <div class="card-tier">Tier 1: Basic</div>
+            <p class="price-badge">From $199</p>
+            <p class="price-note">1-3 pages, standard features</p>
             <p class="description-text">Perfect for small businesses that need a clean, professional online presence.</p>
             <div class="whats-included">
               <h4>What's Included</h4>
@@ -705,7 +769,9 @@
         <div class="card">
           <div class="card-main-content">
             <h3>Digital Invite + RSVP</h3>
-            <p class="price-badge">Starting at $75</p>
+            <div class="card-tier">Event Solutions</div>
+            <p class="price-badge">From $75</p>
+            <p class="price-note">Custom design with guest tracking</p>
             <p class="description-text">Great for events that need a custom invite with guest tracking and real-time updates.</p>
             <div class="whats-included">
               <h4>What's Included</h4>
@@ -726,9 +792,39 @@
 
         <div class="card">
           <div class="card-main-content">
+            <h3>Professional Website</h3>
+            <div class="card-tier">Tier 2: Advanced</div>
+            <p class="price-badge">From $399</p>
+            <p class="price-note">Multi-page, advanced features</p>
+            <p class="description-text">Growing business needing more complex features, integrations, and custom functionality.</p>
+            <div class="whats-included">
+              <h4>What's Included</h4>
+              <ul>
+                <li>Multi-page website</li>
+                <li>Advanced SEO optimization</li>
+                <li>Custom integrations</li>
+                <li>Lead capture forms</li>
+                <li>Analytics tracking</li>
+              </ul>
+            </div>
+          </div>
+          <div class="add-on-options">
+            <p>Add Optional Features:</p>
+            <div class="add-on-item">Chatbot Integration <span class="add-on-price">+$99</span></div>
+            <div class="add-on-item">Monthly Maintenance <span class="add-on-price">+$49/mo</span></div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="grid">
+        <div class="card">
+          <div class="card-main-content">
             <h3>Chatbot Setup</h3>
-            <p class="price-badge">Starting at $99</p>
-            <p class="description-text">Add a smart chatbot to help answer questions and collect leads automatically.</p>
+            <div class="card-tier">Automation</div>
+            <p class="price-badge">From $99</p>
+            <p class="price-note">Standalone or with your website</p>
+            <p class="description-text">Add a smart chatbot to help answer questions and collect leads automatically 24/7.</p>
             <div class="whats-included">
               <h4>What's Included</h4>
               <ul>
@@ -742,12 +838,12 @@
           </div>
           <div class="add-on-options">
             <p>Pair With:</p>
-            <div class="add-on-item">Starter Website <span class="add-on-price">$199+</span></div>
+            <div class="add-on-item">Any Website Package <span class="add-on-price">From $199+</span></div>
           </div>
         </div>
-
       </div>
-      <p class="small-note">Final pricing depends on project size, features, and setup needs. Contact us for a personalized quote.</p>
+
+      <p class="small-note">💡 <strong>Not seeing what you need?</strong> Contact us for a personalized quote on custom projects, ecommerce sites, or specialized integrations.</p>
     </div>
   </section>
 
@@ -778,9 +874,10 @@
         <label for="service">What do you need help with?</label>
         <select id="service" name="service" required>
           <option value="">Select a service</option>
-          <option>Starter Website</option>
-          <option>Digital Invitation</option>
-          <option>Chatbot Setup</option>
+          <option>Essential Website ($199+)</option>
+          <option>Professional Website ($399+)</option>
+          <option>Digital Invitation ($75+)</option>
+          <option>Chatbot Setup ($99+)</option>
           <option>Website + Chatbot</option>
           <option>Website + Maintenance</option>
           <option>Custom Project</option>
