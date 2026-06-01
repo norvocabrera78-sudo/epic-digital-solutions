@@ -1,81 +1,248 @@
-<section id="what-we-do" class="services-section">
-  <div class="services-container">
-    <h2 class="section-title">What We Do</h2>
-    
-    <div class="services-grid">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Epic Digital Solutions</title>
+  <style>
+    /* GLOBAL STYLES */
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #0b132b;
+      color: #ffffff;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* WHAT WE DO SECTION STYLING */
+    .services-section {
+      padding: 80px 20px;
+      background-color: #0b132b; /* Deep dark blue background */
+      text-align: center;
+    }
+
+    .services-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-title {
+      font-size: 2.5rem;
+      margin-bottom: 50px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      color: #ffffff;
+    }
+
+    /* 3-COLUMN GRID DISPLAY */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 30px;
+      padding: 10px;
+    }
+
+    /* 3D FLIP CARD SYSTEM */
+    .service-card {
+      background-color: transparent;
+      min-height: 460px;
+      perspective: 1000px; /* Needed for 3D depth effect */
+    }
+
+    .card-inner {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      text-align: center;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      transform-style: preserve-3d;
+    }
+
+    /* Trigger the flip on card hover */
+    .service-card:hover .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      -webkit-backface-visibility: hidden; /* Safari support */
+      backface-visibility: hidden;
+      border-radius: 12px;
+      border: 2px solid #00b4d8; /* Neon blue accent border */
+      box-sizing: border-box;
+      padding: 25px;
+    }
+
+    /* Front Side Styling */
+    .card-front {
+      background-color: #1c2541;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+    }
+
+    /* Back Side Styling */
+    .card-back {
+      background-color: #111a36;
+      transform: rotateY(180deg);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      text-align: left;
+    }
+
+    /* CARD INTERNAL IMAGES */
+    .image-wrapper {
+      width: 100%;
+      height: 200px;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      background-color: #0b132b;
+    }
+
+    .service-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* TEXT TYPOGRAPHY */
+    .card-front h3 {
+      font-size: 1.5rem;
+      color: #00b4d8;
+      margin: 10px 0;
+    }
+
+    .card-front p {
+      font-size: 0.95rem;
+      color: #d8f3dc;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    .card-back h3 {
+      font-size: 1.4rem;
+      color: #00b4d8;
+      margin-bottom: 20px;
+      align-self: center;
+    }
+
+    /* BULLET LIST ON HOVER */
+    .details-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+    }
+
+    .details-list li {
+      font-size: 0.95rem;
+      color: #ffffff;
+      margin-bottom: 12px;
+      position: relative;
+      padding-left: 20px;
+      line-height: 1.4;
+    }
+
+    .details-list li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #00b4d8;
+      font-size: 1.1rem;
+      top: -2px;
+    }
+  </style>
+</head>
+<body>
+
+  <section id="what-we-do" class="services-section">
+    <div class="services-container">
+      <h2 class="section-title">What We Do</h2>
       
-      <div class="service-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="image-wrapper">
-              <img src="website-creation.jpg" alt="Website Creation" class="service-img">
+      <div class="services-grid">
+        
+        <div class="service-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="image-wrapper">
+                <img src="website-creation.jpg" alt="Website Creation" class="service-img">
+              </div>
+              <div class="card-text">
+                <h3>Website Creation</h3>
+                <p>Complete business launchpads: from clean landing pages to multi-page sites with built-in lead capture.</p>
+              </div>
             </div>
-            <div class="card-text">
-              <h3>Website Creation</h3>
-              <p>Complete business launchpads: from clean landing pages to multi-page sites with built-in lead capture.</p>
+            <div class="card-back">
+              <h3>Website Details</h3>
+              <ul class="details-list">
+                <li>Mobile-responsive business layouts</li>
+                <li>Integrated quote & contact forms</li>
+                <li>Secure customer response databases</li>
+                <li>Social media & basic SEO setup</li>
+                <li>Complete business starter configuration</li>
+              </ul>
             </div>
-          </div>
-          <div class="card-back">
-            <h3>Website Details</h3>
-            <ul class="details-list">
-              <li>Mobile-responsive business layouts</li>
-              <li>Integrated quote & contact forms</li>
-              <li>Secure customer response databases</li>
-              <li>Social media & basic SEO setup</li>
-              <li>Complete business starter configuration</li>
-            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="service-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="image-wrapper">
-              <img src="chatbot-setup.jpg" alt="Smart Chatbot Automation" class="service-img">
+        <div class="service-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="image-wrapper">
+                <img src="chatbot-setup.jpg" alt="Smart Chatbot Automation" class="service-img">
+              </div>
+              <div class="card-text">
+                <h3>Chatbot Setup</h3>
+                <p>Smart, 24/7 virtual assistants that answer common business questions and capture high-intent leads instantly.</p>
+              </div>
             </div>
-            <div class="card-text">
-              <h3>Chatbot Setup</h3>
-              <p>Smart, 24/7 virtual assistants that answer common business questions and capture high-intent leads instantly.</p>
+            <div class="card-back">
+              <h3>Chatbot Details</h3>
+              <ul class="details-list">
+                <li>24/7 automated FAQ replies</li>
+                <li>Package details & pricing routing</li>
+                <li>Instant lead & contact collection</li>
+                <li>Seamless website integration</li>
+                <li>Direct link to booking calendars</li>
+              </ul>
             </div>
-          </div>
-          <div class="card-back">
-            <h3>Chatbot Details</h3>
-            <ul class="details-list">
-              <li>24/7 automated FAQ replies</li>
-              <li>Package details & pricing routing</li>
-              <li>Instant lead & contact collection</li>
-              <li>Seamless website integration</li>
-              <li>Direct link to booking calendars</li>
-            </ul>
           </div>
         </div>
-      </div>
 
-      <div class="service-card">
-        <div class="card-inner">
-          <div class="card-front">
-            <div class="image-wrapper">
-              <img src="digital-invites.jpg" alt="Digital Invitations" class="service-img">
+        <div class="service-card">
+          <div class="card-inner">
+            <div class="card-front">
+              <div class="image-wrapper">
+                <img src="digital-invites.jpg" alt="Digital Invitations" class="service-img">
+              </div>
+              <div class="card-text">
+                <h3>Digital Invites & RSVP + Planning</h3>
+                <p>Custom digital invitations and planning hubs for Weddings, Sweet 16s, and milestone celebrations.</p>
+              </div>
             </div>
-            <div class="card-text">
-              <h3>Digital Invites & RSVP + Planning</h3>
-              <p>Custom digital invitations and planning hubs for Weddings, Sweet 16s, and milestone celebrations.</p>
+            <div class="card-back">
+              <h3>Event Details</h3>
+              <ul class="details-list">
+                <li>Custom themed digital invitations</li>
+                <li>Wedding & Sweet 16 planning forms</li>
+                <li>Real-time RSVP & guest list tracking</li>
+                <li>Dynamic QR codes for cards & flyers</li>
+                <li>Instant email or text arrival alerts</li>
+              </ul>
             </div>
-          </div>
-          <div class="card-back">
-            <h3>Event Details</h3>
-            <ul class="details-list">
-              <li>Custom themed digital invitations</li>
-              <li>Wedding & Sweet 16 planning forms</li>
-              <li>Real-time RSVP & guest list tracking</li>
-              <li>Dynamic QR codes for cards & flyers</li>
-              <li>Instant email or text arrival alerts</li>
-            </ul>
           </div>
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
+
+</body>
+</html>
