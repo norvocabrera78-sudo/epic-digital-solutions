@@ -101,20 +101,46 @@
       box-shadow: 0 0 22px rgba(56, 189, 248, 0.7), 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
-    .showcase-container {
+    /* Slogan Box */
+    .slogan-container {
       max-width: 1080px;
       margin: 0 auto;
       padding: 0 10px;
     }
 
-    .showcase-img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 18px;
-      display: block;
-      margin: 0 auto;
-      border: 1px solid rgba(96, 165, 250, 0.35);
-      box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), 0 24px 55px rgba(0, 0, 0, 0.7);
+    .slogan-box {
+      background: rgba(8, 15, 35, 0.84);
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(56, 189, 248, 0.62);
+      border-radius: 24px;
+      padding: 40px 30px;
+      text-align: center;
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 28px rgba(37, 99, 235, 0.25), inset 0 0 12px rgba(59, 130, 246, 0.16);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .slogan-box:hover {
+      transform: translateY(-5px);
+      border-color: #67e8f9;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.72), 0 0 42px rgba(37, 99, 235, 0.4);
+    }
+
+    .slogan-box h2 {
+      margin: 0;
+      font-size: clamp(28px, 5vw, 48px);
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -1px;
+      text-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+      line-height: 1.2;
+    }
+
+    .slogan-box p {
+      margin: 12px 0 0 0;
+      color: #bfdbfe;
+      font-size: clamp(14px, 2vw, 18px);
+      font-weight: 500;
+      letter-spacing: 0.3px;
     }
 
     /* General Section */
@@ -703,6 +729,9 @@
       .event-types ul {
         columns: 1;
       }
+      .slogan-box {
+        padding: 30px 20px;
+      }
     }
   </style>
 </head>
@@ -713,8 +742,11 @@
       <h1>Epic Digital Solutions</h1>
       <p class="subtitle">Simple Websites. Smart Automations. Real Support.</p>
       <a href="#contact" class="btn">Request a Free Quote</a>
-      <div class="showcase-container">
-        <img src="services-icons.png" alt="Epic Digital Solutions services showcase" class="showcase-img">
+      <div class="slogan-container">
+        <div class="slogan-box">
+          <h2>You envision it we create it</h2>
+          <p>From concept to reality, we bring your digital ideas to life</p>
+        </div>
       </div>
     </div>
   </header>
