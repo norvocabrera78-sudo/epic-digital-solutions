@@ -1,663 +1,596 @@
-body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  color: #f1f5f9;
-  line-height: 1.6;
-  background: #020617;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Epic Digital Solutions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: #f1f5f9;
+      line-height: 1.6;
+      background: #020617;
+    }
 
-/* Main Background - Passes through clicks to the widget */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-  background: linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  pointer-events: none;
-}
+    /* Main Background - Passes through clicks to the widget */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -2;
+      background: linear-gradient(rgba(2, 6, 23, 0.84), rgba(2, 6, 23, 0.9)), url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2070&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      pointer-events: none;
+    }
 
-body::after {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.25), transparent 30%), radial-gradient(circle at 80% 40%, rgba(168, 85, 247, 0.22), transparent 30%), radial-gradient(circle at 50% 90%, rgba(14, 165, 233, 0.16), transparent 35%);
-  pointer-events: none;
-}
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 20% 20%, rgba(37, 99, 235, 0.25), transparent 30%), radial-gradient(circle at 80% 40%, rgba(168, 85, 247, 0.22), transparent 30%), radial-gradient(circle at 50% 80%, rgba(168, 85, 247, 0.15), transparent 35%);
+      pointer-events: none;
+    }
 
-/* Hero */
-.hero-showcase-bg {
-  position: relative;
-  color: white;
-  padding: 80px 20px 90px;
-  text-align: center;
-  overflow: hidden;
-  border-bottom: 1px solid rgba(59, 130, 246, 0.25);
-  background: linear-gradient(135deg, rgba(2, 6, 23, 0.65), rgba(30, 58, 138, 0.35));
-}
+    /* Hero */
+    .hero-showcase-bg {
+      position: relative;
+      color: white;
+      padding: 80px 20px 90px;
+      text-align: center;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(59, 130, 246, 0.25);
+      background: linear-gradient(135deg, rgba(2, 6, 23, 0.65), rgba(30, 58, 138, 0.35));
+    }
 
-.hero-showcase-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.18), transparent 28%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.18), transparent 30%);
-  pointer-events: none;
-}
+    .hero-showcase-bg::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.18), transparent 28%), radial-gradient(circle at 80% 20%, rgba(147, 51, 234, 0.18), transparent 30%);
+      pointer-events: none;
+    }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1100px;
-  margin: 0 auto;
-}
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-.hero-showcase-bg h1 {
-  font-size: clamp(36px, 6vw, 64px);
-  font-weight: 800;
-  margin: 0 0 14px;
-  letter-spacing: -1.5px;
-  text-shadow: 0 0 24px rgba(59, 130, 246, 0.35);
-}
+    .hero-showcase-bg h1 {
+      font-size: clamp(36px, 6vw, 64px);
+      font-weight: 800;
+      margin: 0 0 14px;
+      letter-spacing: -1.5px;
+      text-shadow: 0 0 24px rgba(59, 130, 246, 0.35);
+    }
 
-.hero-showcase-bg p.subtitle {
-  font-size: clamp(17px, 2.5vw, 22px);
-  color: #bfdbfe;
-  margin: 0 auto 34px;
-  font-weight: 500;
-  max-width: 760px;
-}
+    .hero-showcase-bg p.subtitle {
+      font-size: clamp(17px, 2.5vw, 22px);
+      color: #bfdbfe;
+      margin: 0 auto 34px;
+      font-weight: 500;
+      max-width: 760px;
+    }
 
-.btn {
-  display: inline-block;
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
-  color: white;
-  padding: 15px 30px;
-  text-decoration: none;
-  border-radius: 999px;
-  font-weight: 700;
-  transition: all 0.25s ease;
-  box-shadow: 0 0 16px rgba(37, 99, 235, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35);
-  margin-bottom: 55px;
-}
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: white;
+      padding: 15px 30px;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: all 0.25s ease;
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35);
+      margin-bottom: 55px;
+    }
 
-.btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  box-shadow: 0 0 22px rgba(56, 189, 248, 0.7), 0 12px 30px rgba(0, 0, 0, 0.45);
-}
+    .btn:hover {
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 0 22px rgba(56, 189, 248, 0.7), 0 12px 30px rgba(0, 0, 0, 0.45);
+    }
 
-.showcase-container {
-  max-width: 1080px;
-  margin: 0 auto;
-  padding: 0 10px;
-}
+    .showcase-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 10px;
+    }
 
-.showcase-img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 18px;
-  display: block;
-  margin: 0 auto;
-  border: 1px solid rgba(96, 165, 250, 0.35);
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), 0 24px 55px rgba(0, 0, 0, 0.7);
-}
+    .showcase-img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 18px;
+      display: block;
+      margin: 0 auto;
+      border: 1px solid rgba(96, 165, 250, 0.35);
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.25), 0 24px 55px rgba(0, 0, 0, 0.7);
+    }
 
-/* General Section */
-section { padding: 85px 20px; }
-.section-inner { max-width: 1100px; margin: 0 auto; }
+    /* General Section */
+    section { padding: 85px 20px; }
+    .section-inner { max-width: 1100px; margin: 0 auto; }
 
-h2 {
-  text-align: center;
-  font-size: clamp(28px, 4vw, 38px);
-  font-weight: 800;
-  color: #ffffff;
-  margin: 0 0 44px;
-  position: relative;
-  letter-spacing: -0.7px;
-}
+    h2 {
+      text-align: center;
+      font-size: clamp(28px, 4vw, 38px);
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0 0 44px;
+      position: relative;
+      letter-spacing: -0.7px;
+    }
 
-h2::after {
-  content: '';
-  display: block;
-  width: 60px;
-  height: 4px;
-  background: linear-gradient(90deg, #2563eb, #22d3ee);
-  margin: 12px auto 0;
-  border-radius: 999px;
-  box-shadow: 0 0 14px rgba(34, 211, 238, 0.65);
-}
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background: linear-gradient(90deg, #2563eb, #22d3ee);
+      margin: 12px auto 0;
+      border-radius: 999px;
+      box-shadow: 0 0 14px rgba(34, 211, 238, 0.65);
+    }
 
-/* Starter Packages Background */
-.packages-section {
-  position: relative;
-  max-width: 100%;
-  margin: 0;
-  overflow: hidden;
-  border-top: 1px solid rgba(59, 130, 246, 0.2);
-  border-bottom: 1px solid rgba(59, 130, 246, 0.2);
-}
+    /* Starter Packages Background */
+    .packages-section {
+      position: relative;
+      max-width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-top: 1px solid rgba(59, 130, 246, 0.2);
+      border-bottom: 1px solid rgba(59, 130, 246, 0.2);
+    }
 
-.packages-section::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 20% 42%, rgba(0, 183, 255, 0.15), transparent 32%), radial-gradient(circle at 80% 35%, rgba(168, 85, 247, 0.15), transparent 30%);
-  pointer-events: none;
-}
+    .packages-section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 20% 42%, rgba(0, 183, 255, 0.15), transparent 32%), radial-gradient(circle at 80% 35%, rgba(168, 85, 247, 0.15), transparent 30%);
+      pointer-events: none;
+    }
 
-.packages-section .section-inner { position: relative; z-index: 2; }
+    .packages-section .section-inner { position: relative; z-index: 2; }
+    
+    /* Optimized Grid Configuration for 6 Items */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 26px;
+    }
 
-/* Optimized Grid Configuration for 6 Items */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
-}
+    /* Card Setup with Hidden Details Layer */
+    .card {
+      position: relative;
+      background: rgba(8, 15, 35, 0.84);
+      padding: 32px 22px;
+      border-radius: 24px;
+      aspect-ratio: 1.1 / 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      text-align: center;
+      backdrop-filter: blur(12px);
+      border: 2px solid rgba(56, 189, 248, 0.62);
+      box-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 28px rgba(37, 99, 235, 0.25), inset 0 0 12px rgba(59, 130, 246, 0.16);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow: hidden;
+    }
 
-/* Card Setup with Hidden Details Layer */
-.card {
-  position: relative;
-  background: rgba(8, 15, 35, 0.84);
-  padding: 32px 22px;
-  border-radius: 24px;
-  aspect-ratio: 1.1 / 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  backdrop-filter: blur(12px);
-  border: 2px solid rgba(56, 189, 248, 0.62);
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 28px rgba(37, 99, 235, 0.25), inset 0 0 12px rgba(59, 130, 246, 0.16);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow: hidden;
-}
+    .card:hover {
+      transform: translateY(-7px) scale(1.02);
+      border-color: #67e8f9;
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.72), 0 0 42px rgba(37, 99, 235, 0.4);
+    }
 
-.card:hover {
-  transform: translateY(-7px) scale(1.02);
-  border-color: #67e8f9;
-  box-shadow: 0 0 18px rgba(56, 189, 248, 0.72), 0 0 42px rgba(37, 99, 235, 0.4);
-}
+    .card-main-content {
+      transition: transform 0.3s ease;
+    }
 
-.card-main-content {
-  transition: transform 0.3s ease;
-}
+    .card:hover .card-main-content {
+      transform: translateY(-10px);
+    }
 
-.card:hover .card-main-content {
-  transform: translateY(-10px);
-}
+    .card h3 {
+      margin: 0;
+      color: #ffffff;
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
 
-.card h3 {
-  margin: 0;
-  color: #ffffff;
-  font-size: 19px;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-}
+    .card p {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin: 5px 0;
+    }
 
-.card p {
-  color: #cbd5e1;
-  font-size: 14px;
-  margin: 5px 0;
-}
+    .price-badge {
+      display: inline-block;
+      color: #67e8f9;
+      font-size: 16px;
+      font-weight: 800;
+      margin-bottom: 12px !important;
+      text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
+    }
 
-.price-badge {
-  display: inline-block;
-  color: #67e8f9;
-  font-size: 16px;
-  font-weight: 800;
-  margin-bottom: 12px !important;
-  text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
-}
+    /* Slide-Up Tech Detail Panel Styling */
+    .card-hover-details {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(4, 12, 32, 0.96) 0%, rgba(8, 25, 62, 0.98) 100%);
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      transform: translateY(100%);
+      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      z-index: 3;
+    }
 
-/* Slide-Up Tech Detail Panel Styling */
-.card-hover-details {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(180deg, rgba(4, 12, 32, 0.96) 0%, rgba(8, 25, 62, 0.98) 100%);
-  padding: 24px 18px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(100%);
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  z-index: 3;
-}
+    .card:hover .card-hover-details {
+      transform: translateY(0);
+    }
 
-.card:hover .card-hover-details {
-  transform: translateY(0);
-}
+    .card-hover-details h4 {
+      margin: 0 0 12px 0;
+      color: #67e8f9;
+      font-size: 16px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
 
-.card-hover-details h4 {
-  margin: 0 0 12px 0;
-  color: #67e8f9;
-  font-size: 16px;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-}
+    .card-hover-details ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      text-align: left;
+      width: 100%;
+    }
 
-.card-hover-details ul {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  text-align: left;
-  width: 100%;
-}
+    .card-hover-details li {
+      color: #e2e8f0;
+      font-size: 13px;
+      margin-bottom: 8px;
+      padding-left: 18px;
+      position: relative;
+    }
 
-.card-hover-details li {
-  color: #e2e8f0;
-  font-size: 13px;
-  margin-bottom: 8px;
-  padding-left: 18px;
-  position: relative;
-}
+    .card-hover-details li::before {
+      content: "▪";
+      position: absolute;
+      left: 0;
+      color: #06b6d4;
+      font-size: 10px;
+      top: -1px;
+    }
 
-.card-hover-details li::before {
-  content: "▪";
-  position: absolute;
-  left: 0;
-  color: #06b6d4;
-  font-size: 10px;
-  top: -1px;
-}
+    /* Upgraded High-Visibility Pricing Clarification Note */
+    .small-note {
+      margin-top: 36px;
+      text-align: center;
+      color: #e2e8f0;
+      font-size: 16px;
+      font-weight: 500;
+      letter-spacing: 0.2px;
+      text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    }
 
-/* Upgraded High-Visibility Pricing Clarification Note */
-.small-note {
-  margin-top: 36px;
-  text-align: center;
-  color: #e2e8f0;
-  font-size: 16px;
-  font-weight: 500;
-  letter-spacing: 0.2px;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
-}
+    .about {
+      background: rgba(15, 23, 42, 0.76);
+      border-radius: 22px;
+      padding: 40px;
+      box-shadow: 0 0 24px rgba(56, 189, 248, 0.14), 0 12px 35px rgba(0, 0, 0, 0.45);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      max-width: 850px;
+      margin: auto;
+      text-align: center;
+      backdrop-filter: blur(10px);
+    }
 
-.about {
-  background: rgba(15, 23, 42, 0.76);
-  border-radius: 22px;
-  padding: 40px;
-  box-shadow: 0 0 24px rgba(56, 189, 248, 0.14), 0 12px 35px rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  max-width: 850px;
-  margin: auto;
-  text-align: center;
-  backdrop-filter: blur(10px);
-}
+    .about p {
+      font-size: 17px;
+      color: #e2e8f0;
+      line-height: 1.85;
+      margin: 0;
+    }
+    
+    form {
+      background: rgba(15, 23, 42, 0.86);
+      padding: 42px;
+      border-radius: 22px;
+      box-shadow: 0 0 24px rgba(37, 99, 235, 0.18), 0 12px 35px rgba(0, 0, 0, 0.55);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      max-width: 650px;
+      margin: auto;
+      backdrop-filter: blur(10px);
+    }
 
-.about p {
-  font-size: 17px;
-  color: #e2e8f0;
-  line-height: 1.85;
-  margin: 0;
-}
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #bfdbfe;
+      font-size: 14px;
+      font-weight: 600;
+    }
 
-form {
-  background: rgba(15, 23, 42, 0.86);
-  padding: 42px;
-  border-radius: 22px;
-  box-shadow: 0 0 24px rgba(37, 99, 235, 0.18), 0 12px 35px rgba(0, 0, 0, 0.55);
-  border: 1px solid rgba(59, 130, 246, 0.35);
-  max-width: 650px;
-  margin: auto;
-  backdrop-filter: blur(10px);
-}
+    input, select, textarea {
+      width: 100%;
+      padding: 13px 16px;
+      margin-bottom: 20px;
+      border-radius: 10px;
+      border: 1px solid #334155;
+      font-size: 16px;
+      font-family: inherit;
+      background: rgba(15, 23, 42, 0.78);
+      color: white;
+      transition: all 0.2s;
+    }
 
-label {
-  display: block;
-  margin-bottom: 7px;
-  color: #bfdbfe;
-  font-size: 14px;
-  font-weight: 600;
-}
+    input::placeholder, textarea::placeholder { color: #94a3b8; }
+    
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #38bdf8;
+      background: #090d16;
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
+    }
 
-input, select, textarea {
-  width: 100%;
-  padding: 13px 16px;
-  margin-bottom: 20px;
-  border-radius: 10px;
-  border: 1px solid #334155;
-  font-size: 16px;
-  font-family: inherit;
-  background: rgba(15, 23, 42, 0.78);
-  color: white;
-  transition: all 0.2s;
-}
+    select {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8'><path d='M1 4l4 4 4-4'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right 16px center;
+      appearance: none;
+    }
 
-input::placeholder, textarea::placeholder { color: #94a3b8; }
+    button {
+      background: linear-gradient(135deg, #2563eb, #06b6d4);
+      color: white;
+      padding: 15px 28px;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      width: 100%;
+      transition: all 0.25s;
+      box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+    }
 
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border-color: #38bdf8;
-  background: #090d16;
-  box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.18);
-}
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 0 28px rgba(56, 189, 248, 0.65);
+    }
 
-select {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%2394a3b8'><path d='M1 4l4 4 4-4'/></svg>");
-  background-repeat: no-repeat;
-  background-position: right 16px center;
-  appearance: none;
-}
+    footer {
+      background: rgba(2, 4, 10, 0.95);
+      color: #94a3b8;
+      text-align: center;
+      padding: 38px 20px;
+      font-size: 14px;
+      border-top: 1px solid rgba(59, 130, 246, 0.25);
+    }
 
-button {
-  background: linear-gradient(135deg, #2563eb, #06b6d4);
-  color: white;
-  padding: 15px 28px;
-  border: none;
-  border-radius: 999px;
-  font-size: 16px;
-  font-weight: 800;
-  cursor: pointer;
-  width: 100%;
-  transition: all 0.25s;
-  box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
-}
+    footer p { margin: 5px 0; }
 
-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 0 28px rgba(56, 189, 248, 0.65);
-}
+    @media (max-width: 950px) {
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 650px) {
+      .hero-showcase-bg { padding: 60px 16px 70px; }
+      .btn { width: 100%; max-width: 320px; }
+      section { padding: 65px 16px; }
+      .grid { grid-template-columns: 1fr; }
+      .card { aspect-ratio: auto; min-height: 230px; padding: 30px 22px; }
+      form { padding: 28px 20px; }
+      .about { padding: 30px 22px; }
+    }
+  </style>
+</head>
+<body>
 
-footer {
-  background: rgba(2, 4, 10, 0.95);
-  color: #94a3b8;
-  text-align: center;
-  padding: 38px 20px;
-  font-size: 14px;
-  border-top: 1px solid rgba(59, 130, 246, 0.25);
-}
-
-footer p { margin: 5px 0; }
-
-@media (max-width: 950px) {
-  .grid { grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 650px) {
-  .hero-showcase-bg { padding: 60px 16px 70px; }
-  .btn { width: 100%; max-width: 320px; }
-  section { padding: 65px 16px; }
-  .grid { grid-template-columns: 1fr; }
-  .card { aspect-ratio: auto; min-height: 230px; padding: 30px 22px; }
-  form { padding: 28px 20px; }
-  .about { padding: 30px 22px; }
-}
-
-/* ==========================================================================
-   Epic Digital Solutions Isolated Custom Chatbot CSS Sheet
-   ========================================================================== */
-#eds-cb-container {
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    z-index: 999999 !important;
-    font-family: 'Inter', Arial, sans-serif;
-}
-#eds-cb-button {
-    width: 60px;
-    height: 60px;
-    background-color: #06b6d4; 
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: transform 0.2s ease;
-}
-#eds-cb-button:hover { transform: scale(1.1); }
-#eds-cb-icon { color: white; font-size: 28px; }
-
-#eds-cb-box {
-    width: 330px;
-    height: 450px;
-    background-color: #0f172a; 
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.5);
-    display: flex !important;
-    flex-direction: column !important;
-    overflow: hidden;
-    position: absolute;
-    bottom: 75px;
-    right: 0;
-    transition: all 0.3s ease;
-    border: 1px solid #1e293b;
-}
-.eds-cb-hidden {
-    display: none !important;
-    opacity: 0;
-    transform: translateY(20px);
-}
-#eds-cb-header {
-    background-color: #1e293b;
-    color: white;
-    padding: 15px;
-    display: flex !important;
-    justify-content: space-between !important;
-    align-items: center !important;
-    border-bottom: 1px solid #334155;
-}
-#eds-cb-header h4 { margin: 0 !important; font-size: 16px !important; color: #67e8f9 !important; }
-
-#eds-cb-close-btn { 
-    background: none !important; 
-    border: none !important; 
-    color: #94a3b8 !important; 
-    font-size: 13px !important; 
-    cursor: pointer !important;
-    font-weight: 600 !important;
-    width: auto !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    box-shadow: none !important;
-}
-#eds-cb-close-btn:hover { color: white !important; }
-
-#eds-cb-messages {
-    flex: 1 !important;
-    padding: 15px !important;
-    overflow-y: auto !important;
-    background-color: #0f172a !important;
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-}
-.eds-cb-msg { padding: 10px 14px !important; border-radius: 15px !important; font-size: 14px !important; max-width: 80% !important; line-height: 1.4 !important; }
-.eds-cb-bot { background-color: #1e293b !important; color: #e2e8f0 !important; align-self: flex-start !important; border-top-left-radius: 0 !important; }
-.eds-cb-user { background-color: #06b6d4 !important; color: white !important; align-self: flex-end !important; border-top-right-radius: 0 !important; }
-
-#eds-cb-input-area { 
-    padding: 10px 12px !important; 
-    border-top: 1px solid #1e293b !important; 
-    display: flex !important; 
-    background: #1e293b !important;
-    gap: 8px !important;
-    align-items: center !important;
-    box-sizing: border-box !important;
-}
-#eds-cb-user-input { 
-    flex: 1 !important; 
-    width: 75% !important;
-    padding: 8px 14px !important; 
-    margin-bottom: 0 !important; 
-    border: 1px solid #334155 !important; 
-    background-color: #0f172a !important; 
-    color: #ffffff !important; 
-    caret-color: #06b6d4 !important; 
-    border-radius: 20px !important; 
-    outline: none !important;
-    font-size: 14px !important;
-    height: 36px !important;
-    box-sizing: border-box !important;
-}
-#eds-cb-user-input:focus {
-    border-color: #06b6d4 !important;
-    box-shadow: 0 0 5px rgba(6, 182, 212, 0.5) !important;
-}
-#eds-cb-user-input::placeholder { 
-    color: #94a3b8 !important; 
-}
-
-#eds-cb-send-btn { 
-    background: linear-gradient(135deg, #2563eb, #06b6d4) !important; 
-    color: white !important; 
-    border: none !important; 
-    width: 36px !important;
-    height: 36px !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    border-radius: 50% !important; 
-    cursor: pointer !important; 
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    box-shadow: none !important;
-}
-#eds-cb-send-btn:hover { 
-    transform: scale(1.05); 
-}
-
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Starter Website</h3>
-        <p class="price-badge">Starting at $199</p>
-        <p>Perfect for small businesses that need a clean online presence.</p>
-      </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>High-converting layout</li>
-          <li>Fully mobile-responsive</li>
-          <li>Basic search optimization</li>
-          <li>Social link integrations</li>
-        </ul>
+  <header class="hero-showcase-bg">
+    <div class="hero-content">
+      <h1>Epic Digital Solutions</h1>
+      <p class="subtitle">Simple Websites. Smart Automations. Real Support.</p>
+      <a href="#contact" class="btn">Request a Free Quote</a>
+      <div class="showcase-container">
+        <img src="services-icons.png" alt="Epic Digital Solutions services showcase" class="showcase-img">
       </div>
     </div>
+  </header>
 
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Digital Invite + RSVP</h3>
-        <p class="price-badge">Starting at $75</p>
-        <p>Great for events that need a custom invite and guest tracking.</p>
+  <section class="packages-section">
+    <div class="section-inner">
+      <h2>Starter Packages</h2>
+      <div class="grid">
+        
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Starter Website</h3>
+            <p class="price-badge">Starting at $199</p>
+            <p>Perfect for small businesses that need a clean online presence.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>High-converting layout</li>
+              <li>Fully mobile-responsive</li>
+              <li>Basic search optimization</li>
+              <li>Social link integrations</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Digital Invite + RSVP</h3>
+            <p class="price-badge">Starting at $75</p>
+            <p>Great for events that need a custom invite and guest tracking.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Custom thematic design</li>
+              <li>Digital guest list tracker</li>
+              <li>Real-time RSVP alerts</li>
+              <li>Event checklist support</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Business Starter Kit</h3>
+            <p class="price-badge">Starting at $299</p>
+            <p>Website, contact form, QR code, basic branding, and setup support.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Complete 1-page setup</li>
+              <li>Custom scan QR codes</li>
+              <li>Lead-capture quote forms</li>
+              <li>Full configuration guide</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Chatbot Add-On</h3>
+            <p class="price-badge">Starting at $99</p>
+            <p>Add a simple chatbot to help answer questions and collect leads.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>FAQ smart auto-replies</li>
+              <li>24/7 lead collection tool</li>
+              <li>Simple workspace connection</li>
+              <li>No-code dashboard control</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Home Tech Setup</h3>
+            <p class="price-badge">Starting at $89</p>
+            <p>Professional setup for printers, computing devices, and workspace tools.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>All-in-one printer configuration</li>
+              <li>Wireless printing from phones/PCs</li>
+              <li>Software & driver installations</li>
+              <li>Basic device troubleshooting</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-main-content">
+            <h3>Smart Home & Network</h3>
+            <p class="price-badge">Starting at $149</p>
+            <p>Complete home network optimization and smart ecosystem connection.</p>
+          </div>
+          <div class="card-hover-details">
+            <h4>What's Included</h4>
+            <ul>
+              <li>Wi-Fi network configurations</li>
+              <li>Smart TV & streaming setup</li>
+              <li>Google Home & Alexa integration</li>
+              <li>IoT device connections</li>
+            </ul>
+          </div>
+        </div>
+
       </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>Custom thematic design</li>
-          <li>Digital guest list tracker</li>
-          <li>Real-time RSVP alerts</li>
-          <li>Event checklist support</li>
-        </ul>
+      <p class="small-note">Final pricing depends on project size, features, and setup needs.</p>
+    </div>
+  </section>
+
+  <section class="why-section">
+    <div class="section-inner">
+      <h2>Why Choose Epic Digital Solutions?</h2>
+      <div class="about">
+        <p>
+          Epic Digital Solutions helps small businesses, event hosts, and everyday clients with practical digital tools. With years of hands-on technical service experience, we focus on clear communication, custom solutions, and the support you actually need—not complicated jargon or unnecessary features.
+        </p>
       </div>
     </div>
+  </section>
 
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Business Starter Kit</h3>
-        <p class="price-badge">Starting at $299</p>
-        <p>Website, contact form, QR code, basic branding, and setup support.</p>
-      </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>Complete 1-page setup</li>
-          <li>Custom scan QR codes</li>
-          <li>Lead-capture quote forms</li>
-          <li>Full configuration guide</li>
-        </ul>
-      </div>
+  <section class="contact-section" id="contact">
+    <div class="section-inner">
+      <h2>Request a Free Quote</h2>
+      <form id="my-form" action="https://formspree.io/f/xzdwygvr" method="POST">
+        <label for="name">Your Name</label>
+        <input id="name" name="name" type="text" placeholder="Your Name" required />
+
+        <label for="phone">Phone Number</label>
+        <input id="phone" name="phone" type="tel" placeholder="Phone Number" required />
+
+        <label for="email">Email Address</label>
+        <input id="email" name="email" type="email" placeholder="Email Address" required />
+
+        <label for="service">What do you need help with?</label>
+        <select id="service" name="service" required>
+          <option value="">Select a service</option>
+          <option>Website Creation</option>
+          <option>Digital Invitation</option>
+          <option>Chatbot Setup</option>
+          <option>Tech Setup Support</option>
+          <option>Business Starter Kit</option>
+          <option>Smart Home & Network Setup</option>
+        </select>
+
+        <label for="message">Project Details</label>
+        <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
+
+        <button type="submit">Send Request</button>
+      </form>
     </div>
+  </section>
 
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Chatbot Add-On</h3>
-        <p class="price-badge">Starting at $99</p>
-        <p>Add a simple chatbot to help answer questions and collect leads.</p>
-      </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>FAQ smart auto-replies</li>
-          <li>24/7 lead collection tool</li>
-          <li>Simple workspace connection</li>
-          <li>No-code dashboard control</li>
-        </ul>
-      </div>
-    </div>
+  <footer>
+    <p>© 2026 Epic Digital Solutions. All rights reserved.</p>
+    <p>Powered by the Epic brand.</p>
+  </footer>
 
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Home Tech Setup</h3>
-        <p class="price-badge">Starting at $89</p>
-        <p>Professional setup for printers, computing devices, and workspace tools.</p>
-      </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>All-in-one printer configuration</li>
-          <li>Wireless printing from phones/PCs</li>
-          <li>Software & driver installations</li>
-          <li>Basic device troubleshooting</li>
-        </ul>
-      </div>
-    </div>
+  <script>
+    var form = document.getElementById("my-form");
+    async function handleSubmit(event) {
+      event.preventDefault();
+      var data = new FormData(event.target);
+      fetch(event.target.action, {
+        method: form.method,
+        body: data,
+        headers: {'Accept': 'application/json'}
+      }).then(response => {
+        if (response.ok) {
+          form.innerHTML = "<h2 style='color:#67e8f9; text-align:center;'>Request Received!</h2><p style='text-align:center;'>Thanks for reaching out to Epic Digital Solutions. I'll review your project and get back to you shortly.</p>";
+        } else {
+          form.innerHTML = "<p style='text-align:center;'>Oops! There was a problem submitting your form. Please try again.</p>";
+        }
+      });
+    }
+    form.addEventListener("submit", handleSubmit);
+  </script>
 
-    <div class="card">
-      <div class="card-main-content">
-        <h3>Smart Home & Network</h3>
-        <p class="price-badge">Starting at $149</p>
-        <p>Complete home network optimization and smart ecosystem connection.</p>
-      </div>
-      <div class="card-hover-details">
-        <h4>What's Included</h4>
-        <ul>
-          <li>Wi-Fi network configurations</li>
-          <li>Smart TV & streaming setup</li>
-          <li>Google Home & Alexa integration</li>
-          <li>IoT device connections</li>
-        </ul>
-      </div>
-    </div>
-
-  </div>
-  <p class="small-note">Final pricing depends on project size, features, and setup needs.</p>
-</div>
-
-    <label for="phone">Phone Number</label>
-    <input id="phone" name="phone" type="tel" placeholder="Phone Number" required />
-
-    <label for="email">Email Address</label>
-    <input id="email" name="email" type="email" placeholder="Email Address" required />
-
-    <label for="service">What do you need help with?</label>
-    <select id="service" name="service" required>
-      <option value="">Select a service</option>
-      <option>Website Creation</option>
-      <option>Digital Invitation</option>
-      <option>Chatbot Setup</option>
-      <option>Tech Setup Support</option>
-      <option>Business Starter Kit</option>
-      <option>Smart Home & Network Setup</option>
-    </select>
-
-    <label for="message">Project Details</label>
-    <textarea id="message" name="message" rows="5" placeholder="Tell us about your project"></textarea>
-
-    <button type="submit">Send Request</button>
-  </form>
-</div>
-
-  <div id="eds-cb-box" class="eds-cb-hidden">
-      <div id="eds-cb-header">
-          <h4>EDS Digital Assistant</h4>
-          <button id="eds-cb-close-btn" onclick="toggleChat()">End Chat ×</button>
-      </div>
-      <div id="eds-cb-messages">
-          <div class="eds-cb-msg eds-cb-bot">Hello! Welcome to Epic Digital Solutions. How can I help you build your digital presence today? Type "packages" to see what we offer!</div>
-      </div>
-      <div id="eds-cb-input-area">
-          <input type="text" id="eds-cb-user-input" placeholder="Ask about packages..." onkeypress="handleKeyPress(event)" autocomplete="off">
-          <button id="eds-cb-send-btn" onclick="sendMessage()">➔</button>
-      </div>
+</body>
+</html>
