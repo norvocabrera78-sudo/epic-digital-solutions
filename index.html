@@ -314,7 +314,7 @@
 
     .packages-section .section-inner { position: relative; z-index: 2; }
     
-    /* Optimized Grid Configuration for 6 Items */
+    /* Grid Configuration for 3 Items */
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -327,16 +327,16 @@
       background: rgba(8, 15, 35, 0.84);
       padding: 32px 22px;
       border-radius: 24px;
-      aspect-ratio: 1.1 / 1;
+      min-height: 420px;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      justify-content: flex-start;
       text-align: center;
       backdrop-filter: blur(12px);
       border: 2px solid rgba(56, 189, 248, 0.62);
       box-shadow: 0 0 12px rgba(56, 189, 248, 0.45), 0 0 28px rgba(37, 99, 235, 0.25), inset 0 0 12px rgba(59, 130, 246, 0.16);
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      overflow: hidden;
+      overflow: visible;
     }
 
     .card:hover {
@@ -354,9 +354,9 @@
     }
 
     .card h3 {
-      margin: 0;
+      margin: 0 0 12px 0;
       color: #ffffff;
-      font-size: 19px;
+      font-size: 22px;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
@@ -370,63 +370,96 @@
     .price-badge {
       display: inline-block;
       color: #67e8f9;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 800;
-      margin-bottom: 12px !important;
+      margin: 12px 0 16px 0 !important;
       text-shadow: 0 0 10px rgba(34, 211, 238, 0.45);
     }
 
-    /* Slide-Up Tech Detail Panel Styling */
-    .card-hover-details {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(180deg, rgba(4, 12, 32, 0.96) 0%, rgba(8, 25, 62, 0.98) 100%);
-      padding: 24px 18px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      transform: translateY(100%);
-      transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      z-index: 3;
+    .description-text {
+      font-size: 14px;
+      color: #e2e8f0;
+      margin: 0 0 20px 0;
+      line-height: 1.6;
     }
 
-    .card:hover .card-hover-details {
-      transform: translateY(0);
+    /* What's Included List */
+    .whats-included {
+      text-align: left;
+      margin: 20px 0;
+      flex-grow: 1;
     }
 
-    .card-hover-details h4 {
+    .whats-included h4 {
       margin: 0 0 12px 0;
-      color: #67e8f9;
-      font-size: 16px;
+      color: #22d3ee;
+      font-size: 13px;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
 
-    .card-hover-details ul {
+    .whats-included ul {
       margin: 0;
       padding: 0;
       list-style: none;
-      text-align: left;
-      width: 100%;
     }
 
-    .card-hover-details li {
-      color: #e2e8f0;
+    .whats-included li {
+      color: #cbd5e1;
       font-size: 13px;
       margin-bottom: 8px;
       padding-left: 18px;
       position: relative;
     }
 
-    .card-hover-details li::before {
+    .whats-included li::before {
       content: "▪";
       position: absolute;
       left: 0;
       color: #06b6d4;
       font-size: 10px;
       top: -1px;
+    }
+
+    /* Add-on Options */
+    .add-on-options {
+      background: rgba(15, 23, 42, 0.6);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: auto;
+      border: 1px solid rgba(34, 211, 238, 0.3);
+    }
+
+    .add-on-options p {
+      margin: 0 0 8px 0;
+      font-size: 12px;
+      color: #94a3b8;
+      text-transform: uppercase;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+
+    .add-on-item {
+      font-size: 13px;
+      color: #e2e8f0;
+      margin: 6px 0;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .add-on-item::before {
+      content: "+";
+      position: absolute;
+      left: 0;
+      color: #22d3ee;
+      font-size: 12px;
+      font-weight: 800;
+    }
+
+    .add-on-price {
+      color: #67e8f9;
+      font-weight: 700;
     }
 
     /* Upgraded High-Visibility Pricing Clarification Note */
@@ -547,7 +580,7 @@
       section { padding: 65px 16px; }
       .grid { grid-template-columns: 1fr; }
       .service-grid { grid-template-columns: 1fr; }
-      .card { aspect-ratio: auto; min-height: 230px; padding: 30px 22px; }
+      .card { min-height: auto; padding: 30px 22px; }
       form { padding: 28px 20px; }
       .about { padding: 30px 22px; }
     }
@@ -650,16 +683,22 @@
           <div class="card-main-content">
             <h3>Starter Website</h3>
             <p class="price-badge">Starting at $199</p>
-            <p>Perfect for small businesses that need a clean online presence.</p>
+            <p class="description-text">Perfect for small businesses that need a clean, professional online presence.</p>
+            <div class="whats-included">
+              <h4>What's Included</h4>
+              <ul>
+                <li>High-converting layout</li>
+                <li>Fully mobile-responsive</li>
+                <li>Basic search optimization</li>
+                <li>Social link integrations</li>
+                <li>Contact form</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>High-converting layout</li>
-              <li>Fully mobile-responsive</li>
-              <li>Basic search optimization</li>
-              <li>Social link integrations</li>
-            </ul>
+          <div class="add-on-options">
+            <p>Add Optional Features:</p>
+            <div class="add-on-item">Chatbot Integration <span class="add-on-price">+$99</span></div>
+            <div class="add-on-item">Monthly Maintenance <span class="add-on-price">+$49/mo</span></div>
           </div>
         </div>
 
@@ -667,89 +706,48 @@
           <div class="card-main-content">
             <h3>Digital Invite + RSVP</h3>
             <p class="price-badge">Starting at $75</p>
-            <p>Great for events that need a custom invite and guest tracking.</p>
+            <p class="description-text">Great for events that need a custom invite with guest tracking and real-time updates.</p>
+            <div class="whats-included">
+              <h4>What's Included</h4>
+              <ul>
+                <li>Custom thematic design</li>
+                <li>Digital guest list tracker</li>
+                <li>Real-time RSVP alerts</li>
+                <li>Event checklist support</li>
+                <li>Mobile-friendly link</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Custom thematic design</li>
-              <li>Digital guest list tracker</li>
-              <li>Real-time RSVP alerts</li>
-              <li>Event checklist support</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-main-content">
-            <h3>Business Starter Kit</h3>
-            <p class="price-badge">Starting at $299</p>
-            <p>Website, contact form, QR code, basic branding, and setup support.</p>
-          </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Complete 1-page setup</li>
-              <li>Custom scan QR codes</li>
-              <li>Lead-capture quote forms</li>
-              <li>Full configuration guide</li>
-            </ul>
+          <div class="add-on-options">
+            <p>Need Something Custom?</p>
+            <div class="add-on-item">Ask about bulk event packages</div>
           </div>
         </div>
 
         <div class="card">
           <div class="card-main-content">
-            <h3>Chatbot Add-On</h3>
+            <h3>Chatbot Setup</h3>
             <p class="price-badge">Starting at $99</p>
-            <p>Add a simple chatbot to help answer questions and collect leads.</p>
+            <p class="description-text">Add a smart chatbot to help answer questions and collect leads automatically.</p>
+            <div class="whats-included">
+              <h4>What's Included</h4>
+              <ul>
+                <li>FAQ smart auto-replies</li>
+                <li>24/7 lead collection</li>
+                <li>Multi-platform integration</li>
+                <li>No-code dashboard</li>
+                <li>Basic analytics</li>
+              </ul>
+            </div>
           </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>FAQ smart auto-replies</li>
-              <li>24/7 lead collection tool</li>
-              <li>Simple workspace connection</li>
-              <li>No-code dashboard control</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-main-content">
-            <h3>Home Tech Setup</h3>
-            <p class="price-badge">Starting at $89</p>
-            <p>Professional setup for printers, computing devices, and workspace tools.</p>
-          </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>All-in-one printer configuration</li>
-              <li>Wireless printing from phones/PCs</li>
-              <li>Software & driver installations</li>
-              <li>Basic device troubleshooting</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-main-content">
-            <h3>Smart Home & Network</h3>
-            <p class="price-badge">Starting at $149</p>
-            <p>Complete home network optimization and smart ecosystem connection.</p>
-          </div>
-          <div class="card-hover-details">
-            <h4>What's Included</h4>
-            <ul>
-              <li>Wi-Fi network configurations</li>
-              <li>Smart TV & streaming setup</li>
-              <li>Google Home & Alexa integration</li>
-              <li>IoT device connections</li>
-            </ul>
+          <div class="add-on-options">
+            <p>Pair With:</p>
+            <div class="add-on-item">Starter Website <span class="add-on-price">$199+</span></div>
           </div>
         </div>
 
       </div>
-      <p class="small-note">Final pricing depends on project size, features, and setup needs.</p>
+      <p class="small-note">Final pricing depends on project size, features, and setup needs. Contact us for a personalized quote.</p>
     </div>
   </section>
 
@@ -780,12 +778,12 @@
         <label for="service">What do you need help with?</label>
         <select id="service" name="service" required>
           <option value="">Select a service</option>
-          <option>Website Creation</option>
+          <option>Starter Website</option>
           <option>Digital Invitation</option>
           <option>Chatbot Setup</option>
-          <option>Tech Setup Support</option>
-          <option>Business Starter Kit</option>
-          <option>Smart Home & Network Setup</option>
+          <option>Website + Chatbot</option>
+          <option>Website + Maintenance</option>
+          <option>Custom Project</option>
         </select>
 
         <label for="message">Project Details</label>
