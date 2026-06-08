@@ -19,7 +19,6 @@
       background: #020617;
     }
 
-    /* Main Background - Passes through clicks to the widget */
     body::before {
       content: "";
       position: fixed;
@@ -41,7 +40,6 @@
       pointer-events: none;
     }
 
-    /* Hero */
     .hero-showcase-bg {
       position: relative;
       color: white;
@@ -83,6 +81,14 @@
       max-width: 760px;
     }
 
+    .hero-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 55px;
+    }
+
     .btn {
       display: inline-block;
       background: linear-gradient(135deg, #2563eb, #06b6d4);
@@ -93,7 +99,6 @@
       font-weight: 700;
       transition: all 0.25s ease;
       box-shadow: 0 0 16px rgba(37, 99, 235, 0.45), 0 8px 24px rgba(0, 0, 0, 0.35);
-      margin-bottom: 55px;
     }
 
     .btn:hover {
@@ -101,7 +106,10 @@
       box-shadow: 0 0 22px rgba(56, 189, 248, 0.7), 0 12px 30px rgba(0, 0, 0, 0.45);
     }
 
-    /* Slogan Box */
+    .btn-secondary {
+      background: linear-gradient(135deg, #7c3aed, #22d3ee);
+    }
+
     .slogan-container {
       max-width: 1080px;
       margin: 0 auto;
@@ -143,7 +151,6 @@
       letter-spacing: 0.3px;
     }
 
-    /* General Section */
     section { padding: 85px 20px; }
     .section-inner { max-width: 1100px; margin: 0 auto; }
 
@@ -168,7 +175,6 @@
       box-shadow: 0 0 14px rgba(34, 211, 238, 0.65);
     }
 
-    /* What We Do Section */
     .what-we-do-section {
       position: relative;
       max-width: 100%;
@@ -188,20 +194,17 @@
 
     .what-we-do-section .section-inner { position: relative; z-index: 2; }
 
-    /* Service Card Grid */
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 30px;
     }
 
-    /* Service Card with Hover Effect */
     .service-card {
       position: relative;
       border-radius: 20px;
       overflow: hidden;
       cursor: pointer;
-      group: true;
     }
 
     .service-card-image {
@@ -237,7 +240,6 @@
       filter: brightness(0.7);
     }
 
-    /* Info overlay that slides in on hover */
     .service-info-overlay {
       position: absolute;
       inset: 0;
@@ -300,7 +302,6 @@
       font-weight: 800;
     }
 
-    /* Service Title Below Image */
     .service-title {
       margin-top: 18px;
       text-align: center;
@@ -320,7 +321,6 @@
       font-size: 13px;
     }
 
-    /* Starter Packages Background */
     .packages-section {
       position: relative;
       max-width: 100%;
@@ -340,7 +340,6 @@
 
     .packages-section .section-inner { position: relative; z-index: 2; }
     
-    /* Pricing Intro Text */
     .pricing-intro {
       text-align: center;
       margin-bottom: 50px;
@@ -367,7 +366,6 @@
       color: #22d3ee;
     }
 
-    /* Multi-row grid layout */
     .packages-container {
       display: flex;
       flex-direction: column;
@@ -388,7 +386,6 @@
       grid-template-columns: 1fr;
     }
 
-    /* Card Setup with Hidden Details Layer */
     .card {
       position: relative;
       background: rgba(8, 15, 35, 0.84);
@@ -466,7 +463,6 @@
       line-height: 1.6;
     }
 
-    /* What's Included List */
     .whats-included {
       text-align: left;
       margin: 20px 0;
@@ -505,7 +501,6 @@
       top: -1px;
     }
 
-    /* Add-on Options */
     .add-on-options {
       background: rgba(15, 23, 42, 0.6);
       border-radius: 12px;
@@ -545,7 +540,6 @@
       font-weight: 700;
     }
 
-    /* Event Types List */
     .event-types {
       text-align: left;
       margin: 20px 0;
@@ -585,7 +579,6 @@
       font-size: 12px;
     }
 
-    /* Upgraded High-Visibility Pricing Clarification Note */
     .small-note {
       text-align: center;
       color: #e2e8f0;
@@ -698,50 +691,41 @@
 
     @media (max-width: 950px) {
       .service-grid { grid-template-columns: repeat(2, 1fr); }
-      .grid-row-top {
-        grid-template-columns: repeat(2, 1fr);
-      }
-      .grid-row-bottom {
-        grid-template-columns: 1fr;
-      }
+      .grid-row-top { grid-template-columns: repeat(2, 1fr); }
+      .grid-row-bottom { grid-template-columns: 1fr; }
     }
+
     @media (max-width: 650px) {
       .hero-showcase-bg { padding: 60px 16px 70px; }
+      .hero-buttons { flex-direction: column; align-items: center; }
       .btn { width: 100%; max-width: 320px; }
       section { padding: 65px 16px; }
       .service-grid { grid-template-columns: 1fr; }
-      .grid-row-top {
-        grid-template-columns: 1fr;
-      }
-      .grid-row-bottom {
-        grid-template-columns: 1fr;
-      }
+      .grid-row-top { grid-template-columns: 1fr; }
+      .grid-row-bottom { grid-template-columns: 1fr; }
       .card { min-height: auto; padding: 30px 22px; }
       form { padding: 28px 20px; }
       .about { padding: 30px 22px; }
-      .pricing-intro {
-        font-size: 14px;
-      }
-      .pricing-factors {
-        display: block;
-        margin-top: 12px;
-      }
-      .event-types ul {
-        columns: 1;
-      }
-      .slogan-box {
-        padding: 30px 20px;
-      }
+      .pricing-intro { font-size: 14px; }
+      .pricing-factors { display: block; margin-top: 12px; }
+      .event-types ul { columns: 1; }
+      .slogan-box { padding: 30px 20px; }
     }
   </style>
 </head>
+
 <body>
 
   <header class="hero-showcase-bg">
     <div class="hero-content">
       <h1>Epic Digital Solutions</h1>
       <p class="subtitle">Simple Websites. Smart Automations. Real Support.</p>
-      <a href="#contact" class="btn">Request a Free Quote</a>
+
+      <div class="hero-buttons">
+        <a href="#contact" class="btn">Request a Free Quote</a>
+        <a href="ai-lead-assistant-demo.html" class="btn btn-secondary">Try the AI Lead Assistant Demo</a>
+      </div>
+
       <div class="slogan-container">
         <div class="slogan-box">
           <h2>You envision it we create it</h2>
@@ -810,9 +794,9 @@
                 <li>AI-powered responses</li>
                 <li>Lead capture forms</li>
                 <li>FAQ automation</li>
-                <li>Multi-platform support</li>
-                <li>Analytics dashboard</li>
-                <li>Easy no-code setup</li>
+                <li>Email notifications</li>
+                <li>Google Sheet lead tracking</li>
+                <li>Customer confirmation emails</li>
               </ul>
             </div>
           </div>
@@ -838,7 +822,6 @@
       </div>
 
       <div class="packages-container">
-        <!-- TOP ROW: Websites and Chatbot -->
         <div class="grid-row grid-row-top">
           
           <div class="card">
@@ -893,22 +876,30 @@
 
           <div class="card">
             <div class="card-main-content">
-              <h3>Chatbot Setup</h3>
+              <h3>AI Lead Assistant</h3>
               <div class="card-tier">Automation</div>
               <p class="price-badge">From $99</p>
               <p class="price-note">Standalone or with your website</p>
-              <p class="description-text">Add a smart chatbot to help answer questions and collect leads automatically 24/7.</p>
+              <p class="description-text">
+                Add a smart assistant that answers questions, collects leads, emails you instantly,
+                saves requests, and sends customer confirmations automatically.
+              </p>
               <div class="whats-included">
                 <h4>What's Included</h4>
                 <ul>
                   <li>FAQ smart auto-replies</li>
                   <li>24/7 lead collection</li>
-                  <li>Multi-platform integration</li>
-                  <li>No-code dashboard</li>
-                  <li>Basic analytics</li>
+                  <li>Owner email notifications</li>
+                  <li>Customer confirmation email</li>
+                  <li>Google Sheet lead tracking</li>
                 </ul>
               </div>
+
+              <a href="ai-lead-assistant-demo.html" class="btn btn-secondary" style="margin-top: 18px; margin-bottom: 18px;">
+                Try Live Demo
+              </a>
             </div>
+
             <div class="add-on-options">
               <p>Pair With:</p>
               <div class="add-on-item">Any Website Package <span class="add-on-price">From $199+</span></div>
@@ -917,7 +908,6 @@
 
         </div>
 
-        <!-- BOTTOM ROW: Event Solutions -->
         <div class="grid-row grid-row-bottom">
           
           <div class="card">
@@ -994,11 +984,11 @@
           <option value="">Select a service</option>
           <option>Essential Website ($199+)</option>
           <option>Professional Website ($399+)</option>
-          <option>Chatbot Setup ($99+)</option>
+          <option>AI Lead Assistant / Chatbot Setup ($99+)</option>
           <option>Event Planner Suite - Wedding ($75+)</option>
           <option>Event Planner Suite - Sweet Sixteen ($75+)</option>
           <option>Event Planner Suite - Corporate ($75+)</option>
-          <option>Website + Chatbot</option>
+          <option>Website + AI Lead Assistant</option>
           <option>Website + Maintenance</option>
           <option>Custom Project</option>
         </select>
@@ -1018,9 +1008,12 @@
 
   <script>
     var form = document.getElementById("my-form");
+
     async function handleSubmit(event) {
       event.preventDefault();
+
       var data = new FormData(event.target);
+
       fetch(event.target.action, {
         method: form.method,
         body: data,
@@ -1033,6 +1026,7 @@
         }
       });
     }
+
     form.addEventListener("submit", handleSubmit);
   </script>
 
