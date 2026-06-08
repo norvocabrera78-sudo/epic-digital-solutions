@@ -535,7 +535,9 @@ Hours: ${leadData["Hours"]}
       `;
 
       botReply(
-        "Demo request submitted successfully. This is how your business would receive leads automatically from your website."
+        botReply(
+  "Demo request submitted successfully. This is how your business would receive leads automatically from your website. Please check your email for a copy of your request."
+);
       );
 
       leadSummary.style.display = "block";
@@ -543,7 +545,7 @@ Hours: ${leadData["Hours"]}
         <strong>Demo Lead Submitted Successfully</strong>
         <pre style="white-space: pre-wrap; color: #ddd;">${summaryText}</pre>
         <p style="color:#cbd5e1; margin-bottom:0;">
-          In a client setup, this would notify the business owner, save the lead, and send the customer a confirmation email.
+          In a client setup, this would notify the business owner, save the lead, and send the customer a confirmation email. Check the email address you entered for a copy of the request.
         </p>
       `;
     }
