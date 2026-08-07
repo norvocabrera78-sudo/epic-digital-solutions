@@ -224,6 +224,127 @@
             box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
         }
 
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            animation: fadeIn 0.3s;
+        }
+
+        .modal-content {
+            background: var(--bg-primary);
+            margin: 5% auto;
+            padding: 0;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 85vh;
+            overflow-y: auto;
+            box-shadow: 0 20px 60px rgba(0, 210, 255, 0.3);
+            border: 2px solid var(--accent-color);
+        }
+
+        .modal-header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            padding: 20px 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #384967;
+        }
+
+        .modal-header h2 {
+            margin: 0;
+            color: var(--accent-color);
+        }
+
+        .modal-close {
+            color: var(--accent-color);
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .modal-close:hover {
+            color: #38bdf8;
+            transform: scale(1.2);
+        }
+
+        .modal-preview {
+            padding: 40px;
+        }
+
+        .preview-section {
+            margin-bottom: 40px;
+        }
+
+        .preview-label {
+            color: var(--accent-color);
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .preview-placeholder {
+            background: linear-gradient(135deg, #162238 0%, #1d2d4a 100%);
+            border: 2px dashed var(--accent-color);
+            border-radius: 8px;
+            padding: 20px;
+            color: #64748b;
+            text-align: center;
+            min-height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .editable-preview {
+            background: var(--bg-secondary);
+            border: 1px solid #384967;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 15px;
+            color: var(--text-secondary);
+        }
+
+        .editable-preview strong {
+            color: var(--accent-color);
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+        }
+
+        .edit-icon {
+            color: #ffbe0b;
+            margin-left: 10px;
+            font-size: 0.8rem;
+            opacity: 0.7;
+        }
+
+        .modal-footer {
+            padding: 20px 30px;
+            border-top: 1px solid #384967;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         /* 3D Flip Cards Configuration */
         .flip-card-container {
             display: flex;
@@ -324,6 +445,10 @@
         @media (max-width: 768px) {
             .template-demo-section {
                 flex-direction: column;
+            }
+            .modal-content {
+                width: 95%;
+                margin: 10% auto;
             }
         }
     </style>
@@ -508,7 +633,7 @@
                                 <li>Fully customizable</li>
                             </ul>
                         </div>
-                        <a href="event-planner-template.html" class="template-demo-button">View Template Demo →</a>
+                        <button class="template-demo-button" onclick="openTemplatePreview()">View Template Demo →</button>
                     </div>
                 </div>
             </div>
@@ -516,6 +641,103 @@
         
         <p style="margin-top: 40px; font-size: 0.95rem; color: var(--text-secondary);">💡 <em>Not seeing what you need? Contact us for a personalized quote on custom projects, ecommerce sites, specialized features, or bulk website packages.</em></p>
     </section>
+
+    <!-- Template Preview Modal -->
+    <div id="templateModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>🎉 Event Planner Suite Template Preview</h2>
+                <span class="modal-close" onclick="closeTemplatePreview()">&times;</span>
+            </div>
+            <div class="modal-preview">
+                <p style="color: var(--text-secondary); text-align: center; margin-top: 0;">Explore the interactive template below. You can adjust text and see how different customizations look!</p>
+
+                <!-- Hero Section -->
+                <div class="preview-section">
+                    <div class="preview-label">📋 Event Header Section</div>
+                    <div class="preview-placeholder">
+                        <div style="width: 100%; text-align: center;">
+                            <div style="color: #ffbe0b; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; font-size: 0.9rem;">EVENT TYPE</div>
+                            <div style="color: #00d2ff; font-size: 1.8rem; font-weight: bold; margin-bottom: 10px;">[NAMES HERE]</div>
+                            <div style="color: #b0c4de;">A celebration of love and joy</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Photo Gallery -->
+                <div class="preview-section">
+                    <div class="preview-label">📸 Photo Gallery (6 Customizable Slots)</div>
+                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>MAIN IMAGE</small></div>
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 1</small></div>
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 2</small></div>
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 3</small></div>
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 4</small></div>
+                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 5</small></div>
+                    </div>
+                </div>
+
+                <!-- Event Details -->
+                <div class="preview-section">
+                    <div class="preview-label">📍 Event Details (Customizable Fields)</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div class="editable-preview">
+                            <strong>📅 Date</strong>
+                            Saturday, [DATE HERE]
+                        </div>
+                        <div class="editable-preview">
+                            <strong>⏰ Time</strong>
+                            [TIME RANGE HERE]
+                        </div>
+                        <div class="editable-preview">
+                            <strong>📍 Location</strong>
+                            [VENUE NAME]<br>[ADDRESS]
+                        </div>
+                        <div class="editable-preview">
+                            <strong>👥 Dress Code</strong>
+                            [DRESS CODE HERE]
+                        </div>
+                    </div>
+                </div>
+
+                <!-- RSVP Section -->
+                <div class="preview-section">
+                    <div class="preview-label">✉️ Interactive RSVP Form</div>
+                    <div class="editable-preview" style="text-align: left;">
+                        <strong style="display: block; margin-bottom: 15px;">📋 RSVP Information Form</strong>
+                        <div style="font-size: 0.9rem; line-height: 1.8;">
+                            • Guest Name field <span class="edit-icon">(editable)</span><br>
+                            • Email Address <span class="edit-icon">(editable)</span><br>
+                            • Phone Number <span class="edit-icon">(editable)</span><br>
+                            • Number of Guests <span class="edit-icon">(editable)</span><br>
+                            • Will You Attend? (Yes/No/Maybe) <span class="edit-icon">(editable)</span><br>
+                            • Dietary Restrictions <span class="edit-icon">(editable)</span><br>
+                            • Submit Button
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customization Info -->
+                <div class="preview-section" style="background: rgba(255, 0, 110, 0.1); border: 1px solid #ff006e; border-radius: 8px; padding: 20px;">
+                    <div class="preview-label" style="color: #ffbe0b;">✨ What You Can Customize</div>
+                    <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
+                        ✓ <strong>Event Name & Type</strong> - Weddings, Engagements, Birthdays, Corporate Events, etc.<br>
+                        ✓ <strong>All Text Fields</strong> - Dates, times, location, dress code, instructions<br>
+                        ✓ <strong>Color Scheme & Theme</strong> - Match your event's aesthetic<br>
+                        ✓ <strong>Photos & Gallery</strong> - Add up to 6 custom images<br>
+                        ✓ <strong>Form Fields</strong> - Customize RSVP questions<br>
+                        ✓ <strong>Email Notifications</strong> - Get alerts when guests RSVP<br>
+                        ✓ <strong>Guest Tracking</strong> - Real-time RSVP status
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                💡 This is a template preview showing the structure and customization options. Once you order, we'll create your fully personalized event page!
+                <br><br>
+                <button class="cta-btn" onclick="closeTemplatePreview(); document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'});">Ready to Get Started? → Get Your Quote</button>
+            </div>
+        </div>
+    </div>
 
     <section id="maintenance-support" style="padding: 60px 20px; background-color: #0b111e; color: #ffffff; text-align: center; border-top: 1px solid #162238;">
         <div style="max-width: 900px; margin: 0 auto;">
@@ -644,6 +866,32 @@
         <p>&copy; 2026 Epic Digital Solutions. All rights reserved.</p>
         <p style="font-size: 0.8rem; opacity: 0.7;">Powered by the Epic brand.</p>
     </footer>
+
+    <script>
+        function openTemplatePreview() {
+            document.getElementById('templateModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeTemplatePreview() {
+            document.getElementById('templateModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        window.onclick = function(event) {
+            var modal = document.getElementById('templateModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeTemplatePreview();
+            }
+        });
+    </script>
 
 </body>
 </html>
