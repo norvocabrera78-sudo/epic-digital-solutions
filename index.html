@@ -115,6 +115,7 @@
             flex-wrap: wrap;
             gap: 25px;
             justify-content: center;
+            flex: 3;
         }
 
         .pricing-card {
@@ -131,57 +132,110 @@
             justify-content: space-between;
         }
 
-        /* Template Demo Section */
-        .template-demo-section {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 25px;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
+        /* Template Demo Card */
         .template-demo-card {
-            background: linear-gradient(135deg, #ff006e 0%, #fb5607 50%, #ffbe0b 100%);
-            border: none;
-            border-radius: 12px;
-            padding: 2px;
-            flex: 1;
-            min-width: 300px;
-            max-width: 360px;
-            overflow: hidden;
-        }
-
-        .template-demo-inner {
             background: var(--bg-secondary);
-            border-radius: 10px;
-            padding: 25px;
-            height: 100%;
+            border: 1px solid #384967;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: left;
+            flex: 1;
+            min-width: 280px;
+            max-width: 350px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
 
-        .template-demo-title {
-            font-size: 1.3rem;
-            font-weight: bold;
-            color: #ffbe0b;
-            margin-bottom: 8px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+        .template-demo-header {
+            margin-bottom: 20px;
         }
 
-        .template-demo-subtitle {
+        .template-demo-label {
+            color: var(--accent-color);
+            text-transform: uppercase;
             font-size: 0.85rem;
-            color: #fb5607;
+            letter-spacing: 1px;
+            font-weight: bold;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .template-demo-title {
+            font-size: 1.8rem;
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+        }
+
+        .template-demo-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--accent-color);
             margin-bottom: 15px;
-            font-weight: 600;
+        }
+
+        .template-preview-box {
+            background: linear-gradient(135deg, #162238 0%, #1d2d4a 100%);
+            border: 2px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            min-height: 180px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
+        .template-preview-label {
+            font-size: 0.85rem;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .template-preview-image {
+            width: 100%;
+            height: 120px;
+            background: linear-gradient(45deg, #00d2ff20, #ff006e20);
+            border-radius: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
         }
 
         .template-demo-description {
             color: var(--text-secondary);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             margin-bottom: 20px;
             line-height: 1.6;
+        }
+
+        .demo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff006e 0%, #fb5607 100%);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 15px;
+        }
+
+        .demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
         }
 
         .template-features {
@@ -204,26 +258,6 @@
             margin-right: 8px;
         }
 
-        .template-demo-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #ff006e 0%, #fb5607 100%);
-            color: #ffffff;
-            padding: 12px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-weight: bold;
-            text-align: center;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-
-        .template-demo-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
-        }
-
         /* Modal Styles */
         .modal {
             display: none;
@@ -235,6 +269,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.8);
             animation: fadeIn 0.3s;
+            overflow-y: auto;
         }
 
         .modal-content {
@@ -244,8 +279,6 @@
             border-radius: 12px;
             width: 90%;
             max-width: 1200px;
-            max-height: 85vh;
-            overflow-y: auto;
             box-shadow: 0 20px 60px rgba(0, 210, 255, 0.3);
             border: 2px solid var(--accent-color);
         }
@@ -281,55 +314,88 @@
             padding: 40px;
         }
 
-        .preview-section {
-            margin-bottom: 40px;
+        .event-preview {
+            background: linear-gradient(135deg, #162238 0%, #1d2d4a 100%);
+            border: 1px solid #384967;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
         }
 
-        .preview-label {
+        .event-preview-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid var(--accent-color);
+        }
+
+        .event-preview-title {
+            color: var(--accent-color);
+            font-size: 1.3rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+        }
+
+        .event-names {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+            margin-bottom: 10px;
+        }
+
+        .event-tagline {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        .customization-section {
+            margin-bottom: 30px;
+        }
+
+        .customization-label {
             color: var(--accent-color);
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 10px;
             font-weight: bold;
+            display: block;
         }
 
-        .preview-placeholder {
-            background: linear-gradient(135deg, #162238 0%, #1d2d4a 100%);
-            border: 2px dashed var(--accent-color);
-            border-radius: 8px;
-            padding: 20px;
-            color: #64748b;
-            text-align: center;
-            min-height: 150px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .custom-input {
+            width: 100%;
+            padding: 12px;
+            background: var(--bg-primary);
+            border: 1px solid #384967;
+            color: #ffffff;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-bottom: 15px;
             font-size: 1rem;
         }
 
-        .editable-preview {
-            background: var(--bg-secondary);
-            border: 1px solid #384967;
-            border-radius: 8px;
-            padding: 15px;
-            margin-bottom: 15px;
+        .custom-input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .preview-photo-slot {
+            background: linear-gradient(45deg, #00d2ff20, #ff006e20);
+            border: 2px dashed var(--accent-color);
+            border-radius: 6px;
+            aspect-ratio: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: var(--text-secondary);
-        }
-
-        .editable-preview strong {
-            color: var(--accent-color);
-            display: block;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-        }
-
-        .edit-icon {
-            color: #ffbe0b;
-            margin-left: 10px;
             font-size: 0.8rem;
-            opacity: 0.7;
         }
 
         .modal-footer {
@@ -443,12 +509,15 @@
         }
 
         @media (max-width: 768px) {
-            .template-demo-section {
+            .pricing-wrapper {
                 flex-direction: column;
             }
-            .modal-content {
-                width: 95%;
-                margin: 10% auto;
+            .pricing-container {
+                flex: none;
+                width: 100%;
+            }
+            .preview-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
     </style>
@@ -521,7 +590,7 @@
         <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-bottom: 40px;">*Pricing depends on: design complexity, features, integrations, and revisions</p>
         
         <div class="pricing-wrapper">
-            <div class="pricing-container" style="flex: 3;">
+            <div class="pricing-container">
                 <div class="pricing-card">
                     <div>
                         <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Tier 1: Basic</span>
@@ -614,27 +683,40 @@
                 </div>
             </div>
 
-            <!-- Template Demo Card -->
-            <div class="template-demo-section" style="flex: 1; display: flex; flex-direction: column;">
-                <div class="template-demo-card">
-                    <div class="template-demo-inner">
-                        <div>
-                            <div class="template-demo-title">🎉 See It In Action</div>
-                            <div class="template-demo-subtitle">Event Planner Template Demo</div>
-                            <p class="template-demo-description">
-                                Get a live preview of what your custom event page would look like with our Event Planner Suite!
-                            </p>
-                            <ul class="template-features">
-                                <li>Custom event names & dates</li>
-                                <li>Photo gallery layout</li>
-                                <li>Event details section</li>
-                                <li>Live RSVP form</li>
-                                <li>Guest tracking</li>
-                                <li>Fully customizable</li>
-                            </ul>
-                        </div>
-                        <button class="template-demo-button" onclick="openTemplatePreview()">View Template Demo →</button>
+            <!-- Template Demo Card - Same Size as Event Planner -->
+            <div class="template-demo-card">
+                <div class="template-demo-header">
+                    <span class="template-demo-label">🎉 Try It Live</span>
+                    <h3 class="template-demo-title">Event Template Demo</h3>
+                    <div class="template-demo-price">From $75</div>
+                </div>
+
+                <div class="template-preview-box">
+                    <div>
+                        <div class="template-preview-label">✨ Live Preview</div>
+                        <div class="template-preview-image">See your event come to life</div>
                     </div>
+                </div>
+
+                <p class="template-demo-description">
+                    See exactly what your custom event page will look like. Try changing names, dates, and colors to match your vision!
+                </p>
+
+                <button class="demo-button" onclick="openTemplateDemo()">Try Interactive Demo →</button>
+
+                <ul class="template-features">
+                    <li>Customize event name & type</li>
+                    <li>Try different color schemes</li>
+                    <li>Preview photo gallery</li>
+                    <li>See RSVP form layout</li>
+                    <li>Mobile-friendly preview</li>
+                </ul>
+
+                <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
+                    <strong>Full Package Includes:</strong><br>
+                    + Custom design<br>
+                    + Guest tracking<br>
+                    + Email notifications
                 </div>
             </div>
         </div>
@@ -642,99 +724,93 @@
         <p style="margin-top: 40px; font-size: 0.95rem; color: var(--text-secondary);">💡 <em>Not seeing what you need? Contact us for a personalized quote on custom projects, ecommerce sites, specialized features, or bulk website packages.</em></p>
     </section>
 
-    <!-- Template Preview Modal -->
+    <!-- Interactive Template Demo Modal -->
     <div id="templateModal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
-                <h2>🎉 Event Planner Suite Template Preview</h2>
-                <span class="modal-close" onclick="closeTemplatePreview()">&times;</span>
+                <h2>🎉 Event Planner Template - Try It Live</h2>
+                <span class="modal-close" onclick="closeTemplateDemo()">&times;</span>
             </div>
             <div class="modal-preview">
-                <p style="color: var(--text-secondary); text-align: center; margin-top: 0;">Explore the interactive template below. You can adjust text and see how different customizations look!</p>
+                <!-- Customization Inputs -->
+                <div style="background: linear-gradient(135deg, #162238 0%, #1d2d4a 100%); border: 1px solid #384967; border-radius: 8px; padding: 25px; margin-bottom: 30px;">
+                    <h3 style="color: var(--accent-color); margin-top: 0;">✏️ Customize Your Event</h3>
+                    
+                    <label class="customization-label">Your Names (e.g., "Sarah & Michael")</label>
+                    <input type="text" id="eventNames" class="custom-input" value="Sarah & Michael" onchange="updatePreview()">
 
-                <!-- Hero Section -->
-                <div class="preview-section">
-                    <div class="preview-label">📋 Event Header Section</div>
-                    <div class="preview-placeholder">
-                        <div style="width: 100%; text-align: center;">
-                            <div style="color: #ffbe0b; font-weight: bold; margin-bottom: 10px; text-transform: uppercase; font-size: 0.9rem;">EVENT TYPE</div>
-                            <div style="color: #00d2ff; font-size: 1.8rem; font-weight: bold; margin-bottom: 10px;">[NAMES HERE]</div>
-                            <div style="color: #b0c4de;">A celebration of love and joy</div>
+                    <label class="customization-label">Event Type (e.g., "Engagement Celebration")</label>
+                    <input type="text" id="eventType" class="custom-input" value="Engagement Celebration" onchange="updatePreview()">
+
+                    <label class="customization-label">Date</label>
+                    <input type="text" id="eventDate" class="custom-input" value="Saturday, July 12, 2026" onchange="updatePreview()">
+
+                    <label class="customization-label">Tagline (Your Own Message)</label>
+                    <input type="text" id="eventTagline" class="custom-input" value="A celebration of love and joy" onchange="updatePreview()">
+                </div>
+
+                <!-- Live Preview -->
+                <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 2px solid var(--accent-color); border-radius: 8px; padding: 30px; margin-bottom: 30px;">
+                    <h3 style="color: var(--accent-color); text-align: center; margin-top: 0;">📱 Live Preview</h3>
+                    
+                    <div class="event-preview">
+                        <div class="event-preview-header">
+                            <div class="event-preview-title" id="previewType">Engagement Celebration</div>
+                            <div class="event-names" id="previewNames">Sarah & Michael</div>
+                            <div class="event-tagline" id="previewTagline">A celebration of love and joy</div>
+                        </div>
+
+                        <div style="text-align: center; margin: 25px 0;">
+                            <div style="color: var(--accent-color); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; font-weight: bold;">📸 Photo Gallery</div>
+                            <div class="preview-grid">
+                                <div class="preview-photo-slot">MAIN</div>
+                                <div class="preview-photo-slot">PHOTO 1</div>
+                                <div class="preview-photo-slot">PHOTO 2</div>
+                                <div class="preview-photo-slot">PHOTO 3</div>
+                                <div class="preview-photo-slot">PHOTO 4</div>
+                                <div class="preview-photo-slot">PHOTO 5</div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 25px; padding-top: 25px; border-top: 1px solid #384967;">
+                            <div style="color: var(--accent-color); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; font-weight: bold;">📅 Event Details</div>
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; color: var(--text-secondary); font-size: 0.95rem;">
+                                <div>
+                                    <div style="color: var(--accent-color); font-weight: bold; margin-bottom: 5px;">Date</div>
+                                    <div id="previewDate">Saturday, July 12, 2026</div>
+                                </div>
+                                <div>
+                                    <div style="color: var(--accent-color); font-weight: bold; margin-bottom: 5px;">Time</div>
+                                    <div>4:00 PM - 8:00 PM</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: center; margin-top: 25px; padding-top: 25px; border-top: 1px solid #384967;">
+                            <div style="color: var(--accent-color); font-size: 0.9rem; text-transform: uppercase; margin-bottom: 15px; font-weight: bold;">✉️ RSVP Form</div>
+                            <button class="cta-btn">Confirm Your Attendance →</button>
+                            <div style="color: var(--text-secondary); font-size: 0.85rem; margin-top: 10px;">Includes: Name, Email, Phone, Guest Count, Dietary Restrictions</div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Photo Gallery -->
-                <div class="preview-section">
-                    <div class="preview-label">📸 Photo Gallery (6 Customizable Slots)</div>
-                    <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>MAIN IMAGE</small></div>
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 1</small></div>
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 2</small></div>
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 3</small></div>
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 4</small></div>
-                        <div class="preview-placeholder" style="min-height: 120px;"><small>PHOTO 5</small></div>
-                    </div>
-                </div>
-
-                <!-- Event Details -->
-                <div class="preview-section">
-                    <div class="preview-label">📍 Event Details (Customizable Fields)</div>
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                        <div class="editable-preview">
-                            <strong>📅 Date</strong>
-                            Saturday, [DATE HERE]
-                        </div>
-                        <div class="editable-preview">
-                            <strong>⏰ Time</strong>
-                            [TIME RANGE HERE]
-                        </div>
-                        <div class="editable-preview">
-                            <strong>📍 Location</strong>
-                            [VENUE NAME]<br>[ADDRESS]
-                        </div>
-                        <div class="editable-preview">
-                            <strong>👥 Dress Code</strong>
-                            [DRESS CODE HERE]
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RSVP Section -->
-                <div class="preview-section">
-                    <div class="preview-label">✉️ Interactive RSVP Form</div>
-                    <div class="editable-preview" style="text-align: left;">
-                        <strong style="display: block; margin-bottom: 15px;">📋 RSVP Information Form</strong>
-                        <div style="font-size: 0.9rem; line-height: 1.8;">
-                            • Guest Name field <span class="edit-icon">(editable)</span><br>
-                            • Email Address <span class="edit-icon">(editable)</span><br>
-                            • Phone Number <span class="edit-icon">(editable)</span><br>
-                            • Number of Guests <span class="edit-icon">(editable)</span><br>
-                            • Will You Attend? (Yes/No/Maybe) <span class="edit-icon">(editable)</span><br>
-                            • Dietary Restrictions <span class="edit-icon">(editable)</span><br>
-                            • Submit Button
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Customization Info -->
-                <div class="preview-section" style="background: rgba(255, 0, 110, 0.1); border: 1px solid #ff006e; border-radius: 8px; padding: 20px;">
-                    <div class="preview-label" style="color: #ffbe0b;">✨ What You Can Customize</div>
-                    <div style="color: var(--text-secondary); line-height: 1.8; font-size: 0.95rem;">
-                        ✓ <strong>Event Name & Type</strong> - Weddings, Engagements, Birthdays, Corporate Events, etc.<br>
-                        ✓ <strong>All Text Fields</strong> - Dates, times, location, dress code, instructions<br>
-                        ✓ <strong>Color Scheme & Theme</strong> - Match your event's aesthetic<br>
-                        ✓ <strong>Photos & Gallery</strong> - Add up to 6 custom images<br>
-                        ✓ <strong>Form Fields</strong> - Customize RSVP questions<br>
-                        ✓ <strong>Email Notifications</strong> - Get alerts when guests RSVP<br>
-                        ✓ <strong>Guest Tracking</strong> - Real-time RSVP status
-                    </div>
+                <div style="background: rgba(255, 0, 110, 0.1); border: 1px solid #ff006e; border-radius: 8px; padding: 20px; margin-bottom: 30px;">
+                    <h4 style="color: #ffbe0b; margin-top: 0;">✨ What You Can Customize:</h4>
+                    <ul style="color: var(--text-secondary); line-height: 2; margin: 0; padding-left: 20px;">
+                        <li>✓ Event names, type, and dates</li>
+                        <li>✓ Custom color schemes & themes</li>
+                        <li>✓ All photos & gallery images</li>
+                        <li>✓ Event details & descriptions</li>
+                        <li>✓ RSVP form questions</li>
+                        <li>✓ Email notification settings</li>
+                        <li>✓ Guest tracking & status updates</li>
+                    </ul>
                 </div>
             </div>
             <div class="modal-footer">
-                💡 This is a template preview showing the structure and customization options. Once you order, we'll create your fully personalized event page!
+                💡 This is an interactive preview showing the template structure. When you order, we'll customize it exactly to your vision!
                 <br><br>
-                <button class="cta-btn" onclick="closeTemplatePreview(); document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'});">Ready to Get Started? → Get Your Quote</button>
+                <button class="cta-btn" onclick="closeTemplateDemo(); document.getElementById('quote-form').scrollIntoView({behavior: 'smooth'});">Ready to Order? → Get Your Quote</button>
             </div>
         </div>
     </div>
@@ -868,14 +944,27 @@
     </footer>
 
     <script>
-        function openTemplatePreview() {
+        function openTemplateDemo() {
             document.getElementById('templateModal').style.display = 'block';
             document.body.style.overflow = 'hidden';
+            updatePreview();
         }
 
-        function closeTemplatePreview() {
+        function closeTemplateDemo() {
             document.getElementById('templateModal').style.display = 'none';
             document.body.style.overflow = 'auto';
+        }
+
+        function updatePreview() {
+            const names = document.getElementById('eventNames').value || 'Your Names';
+            const type = document.getElementById('eventType').value || 'Event Type';
+            const date = document.getElementById('eventDate').value || 'Date';
+            const tagline = document.getElementById('eventTagline').value || 'Tagline';
+
+            document.getElementById('previewNames').textContent = names;
+            document.getElementById('previewType').textContent = type;
+            document.getElementById('previewDate').textContent = date;
+            document.getElementById('previewTagline').textContent = tagline;
         }
 
         window.onclick = function(event) {
@@ -888,7 +977,7 @@
 
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
-                closeTemplatePreview();
+                closeTemplateDemo();
             }
         });
     </script>
