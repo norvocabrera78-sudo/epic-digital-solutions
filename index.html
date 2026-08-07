@@ -102,12 +102,19 @@
             font-size: 0.95rem;
         }
 
-        .pricing-container {
+        .pricing-wrapper {
             display: flex;
             flex-wrap: wrap;
             gap: 25px;
             justify-content: center;
             margin-top: 40px;
+        }
+
+        .pricing-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
         }
 
         .pricing-card {
@@ -122,6 +129,99 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+        }
+
+        /* Template Demo Section */
+        .template-demo-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .template-demo-card {
+            background: linear-gradient(135deg, #ff006e 0%, #fb5607 50%, #ffbe0b 100%);
+            border: none;
+            border-radius: 12px;
+            padding: 2px;
+            flex: 1;
+            min-width: 300px;
+            max-width: 360px;
+            overflow: hidden;
+        }
+
+        .template-demo-inner {
+            background: var(--bg-secondary);
+            border-radius: 10px;
+            padding: 25px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .template-demo-title {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #ffbe0b;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .template-demo-subtitle {
+            font-size: 0.85rem;
+            color: #fb5607;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .template-demo-description {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .template-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        .template-features li {
+            margin-bottom: 8px;
+        }
+
+        .template-features li:before {
+            content: "✨ ";
+            color: #ffbe0b;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+
+        .template-demo-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff006e 0%, #fb5607 100%);
+            color: #ffffff;
+            padding: 12px 24px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .template-demo-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
         }
 
         /* 3D Flip Cards Configuration */
@@ -220,6 +320,12 @@
             font-size: 0.9rem;
             color: var(--text-secondary);
         }
+
+        @media (max-width: 768px) {
+            .template-demo-section {
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
@@ -289,95 +395,121 @@
         <p style="color: var(--text-secondary); max-width: 700px; margin: 0 auto 30px auto;">Every project is unique. Our pricing reflects the complexity, features, and timeline of your needs.</p>
         <p style="font-size: 0.9rem; color: var(--text-secondary); font-style: italic; margin-bottom: 40px;">*Pricing depends on: design complexity, features, integrations, and revisions</p>
         
-        <div class="pricing-container">
-            <div class="pricing-card">
-                <div>
-                    <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Tier 1: Basic</span>
-                    <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Landing Page Website</h3>
-                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $300</div>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Strictly 1 High-Converting Page</em><br><br>Perfect for clean, single-page professional presence</p>
-                    <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
-                        <li>▪ Clean single-page conversion flow</li>
-                        <li>▪ Fully mobile-responsive layout</li>
-                        <li>▪ Basic search optimization</li>
-                        <li>▪ Social link integrations</li>
-                        <li>▪ Core contact form setup</li>
-                    </ul>
+        <div class="pricing-wrapper">
+            <div class="pricing-container" style="flex: 3;">
+                <div class="pricing-card">
+                    <div>
+                        <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Tier 1: Basic</span>
+                        <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Landing Page Website</h3>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $300</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Strictly 1 High-Converting Page</em><br><br>Perfect for clean, single-page professional presence</p>
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
+                            <li>▪ Clean single-page conversion flow</li>
+                            <li>▪ Fully mobile-responsive layout</li>
+                            <li>▪ Basic search optimization</li>
+                            <li>▪ Social link integrations</li>
+                            <li>▪ Core contact form setup</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Add Optional Features:</strong><br>
+                        + Chatbot Integration (+$99) <br>
+                        <span style="color: var(--accent-color);">+ Support Plans Available (From $49.99)</span>
+                    </div>
                 </div>
-                <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
-                    <strong>Add Optional Features:</strong><br>
-                    + Chatbot Integration (+$99) <br>
-                    <span style="color: var(--accent-color);">+ Support Plans Available (From $49.99)</span>
+
+                <div class="pricing-card">
+                    <div>
+                        <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Tier 2: Advanced</span>
+                        <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Professional Website</h3>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $499</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Up to 4 Pages Included</em><br><br>Designed for growing brands needing structured layout with multiple sections</p>
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
+                            <li>▪ Up to 4-Page navigation framework</li>
+                            <li>▪ Advanced SEO optimization hooks</li>
+                            <li>▪ Advanced tracking & analytics scripts</li>
+                            <li>▪ Fully customized system integrations</li>
+                            <li>▪ Multi-purpose content tracking</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Scalable Addons:</strong><br>
+                        <span style="color: #ffffff; font-weight: bold;">+ Additional Pages: $100.00 per page</span><br>
+                        + Chatbot Integration (+$99)<br>
+                        <span style="color: var(--accent-color);">+ Support Plans Available (From $49.99)</span>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div>
+                        <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Automation</span>
+                        <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">AI Lead Assistant</h3>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $99</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Standalone or with your website</em><br><br>Add a smart assistant that answers questions and captures leads 24/7</p>
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
+                            <li>▪ FAQ smart auto-replies</li>
+                            <li>▪ 24/7 lead collection</li>
+                            <li>▪ Owner email notifications</li>
+                            <li>▪ Customer confirmation email</li>
+                            <li>▪ Google Sheet lead tracking</li>
+                        </ul>
+                    </div>
+                    <div style="margin-bottom: 15px;"><a href="ai-lead-assistant-demo.html" style="font-size: 0.9rem; color: var(--accent-color); font-weight: bold; text-decoration: none;">Try Live Demo →</a></div>
+                    <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Pair With:</strong><br>
+                        + Any Website Package
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div>
+                        <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Digital Invite + RSVP</span>
+                        <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Event Planner Suite</h3>
+                        <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $75</div>
+                        <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;"><em>Custom design with guest tracking</em><br><br>Complete event solutions with custom invitations and real-time tracking</p>
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px;">Perfect For:</h4>
+                        <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 15px 0; line-height: 1.4;">🎉 Weddings & Engagements, Sweet Sixteens, Corporate Events, Birthdays, Baby Showers & More</p>
+                        <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px;">Features Included:</h4>
+                        <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; line-height: 1.6; font-size: 0.95rem;">
+                            <li>▪ Custom thematic design</li>
+                            <li>▪ Digital guest list tracker</li>
+                            <li>▪ Real-time RSVP alerts</li>
+                            <li>▪ Event checklist support</li>
+                            <li>▪ Mobile-friendly access</li>
+                        </ul>
+                    </div>
+                    <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
+                        <strong>Customize Your Event:</strong><br>
+                        + Theme Customization (Included)<br>
+                        + Bulk Event Packages (Available)
+                    </div>
                 </div>
             </div>
 
-            <div class="pricing-card">
-                <div>
-                    <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Tier 2: Advanced</span>
-                    <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Professional Website</h3>
-                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $499</div>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Up to 4 Pages Included</em><br><br>Designed for growing brands needing structured layout with multiple sections</p>
-                    <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
-                        <li>▪ Up to 4-Page navigation framework</li>
-                        <li>▪ Advanced SEO optimization hooks</li>
-                        <li>▪ Advanced tracking & analytics scripts</li>
-                        <li>▪ Fully customized system integrations</li>
-                        <li>▪ Multi-purpose content tracking</li>
-                    </ul>
-                </div>
-                <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
-                    <strong>Scalable Addons:</strong><br>
-                    <span style="color: #ffffff; font-weight: bold;">+ Additional Pages: $100.00 per page</span><br>
-                    + Chatbot Integration (+$99)<br>
-                    <span style="color: var(--accent-color);">+ Support Plans Available (From $49.99)</span>
-                </div>
-            </div>
-
-            <div class="pricing-card">
-                <div>
-                    <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Automation</span>
-                    <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">AI Lead Assistant</h3>
-                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $99</div>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 20px;"><em>Standalone or with your website</em><br><br>Add a smart assistant that answers questions and captures leads 24/7</p>
-                    <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 10px;">What's Included:</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 25px 0; line-height: 1.8; font-size: 0.95rem;">
-                        <li>▪ FAQ smart auto-replies</li>
-                        <li>▪ 24/7 lead collection</li>
-                        <li>▪ Owner email notifications</li>
-                        <li>▪ Customer confirmation email</li>
-                        <li>▪ Google Sheet lead tracking</li>
-                    </ul>
-                </div>
-                <div style="margin-bottom: 15px;"><a href="ai-lead-assistant-demo.html" style="font-size: 0.9rem; color: var(--accent-color); font-weight: bold; text-decoration: none;">Try Live Demo →</a></div>
-                <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
-                    <strong>Pair With:</strong><br>
-                    + Any Website Package
-                </div>
-            </div>
-
-            <div class="pricing-card">
-                <div>
-                    <span style="color: var(--accent-color); text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px;">Digital Invite + RSVP</span>
-                    <h3 style="margin: 10px 0 5px 0; font-size: 1.8rem;">Event Planner Suite</h3>
-                    <div style="font-size: 1.5rem; font-weight: bold; color: var(--accent-color); margin-bottom: 15px;">From $75</div>
-                    <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 15px;"><em>Custom design with guest tracking</em><br><br>Complete event solutions with custom invitations and real-time tracking</p>
-                    <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px;">Perfect For:</h4>
-                    <p style="font-size: 0.85rem; color: var(--text-secondary); margin: 0 0 15px 0; line-height: 1.4;">🎉 Weddings & Engagements, Sweet Sixteens, Corporate Events, Birthdays, Baby Showers & More</p>
-                    <h4 style="font-size: 0.9rem; text-transform: uppercase; margin-bottom: 5px;">Features Included:</h4>
-                    <ul style="list-style: none; padding: 0; margin: 0 0 20px 0; line-height: 1.6; font-size: 0.95rem;">
-                        <li>▪ Custom thematic design</li>
-                        <li>▪ Digital guest list tracker</li>
-                        <li>▪ Real-time RSVP alerts</li>
-                        <li>▪ Event checklist support</li>
-                        <li>▪ Mobile-friendly access</li>
-                    </ul>
-                </div>
-                <div style="border-top: 1px solid #384967; padding-top: 15px; font-size: 0.85rem; color: var(--text-secondary);">
-                    <strong>Customize Your Event:</strong><br>
-                    + Theme Customization (Included)<br>
-                    + Bulk Event Packages (Available)
+            <!-- Template Demo Card -->
+            <div class="template-demo-section" style="flex: 1; display: flex; flex-direction: column;">
+                <div class="template-demo-card">
+                    <div class="template-demo-inner">
+                        <div>
+                            <div class="template-demo-title">🎉 See It In Action</div>
+                            <div class="template-demo-subtitle">Event Planner Template Demo</div>
+                            <p class="template-demo-description">
+                                Get a live preview of what your custom event page would look like with our Event Planner Suite!
+                            </p>
+                            <ul class="template-features">
+                                <li>Custom event names & dates</li>
+                                <li>Photo gallery layout</li>
+                                <li>Event details section</li>
+                                <li>Live RSVP form</li>
+                                <li>Guest tracking</li>
+                                <li>Fully customizable</li>
+                            </ul>
+                        </div>
+                        <a href="event-planner-template.html" class="template-demo-button">View Template Demo →</a>
+                    </div>
                 </div>
             </div>
         </div>
